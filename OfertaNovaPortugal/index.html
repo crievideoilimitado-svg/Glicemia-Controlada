@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>Glicémia em Equilíbrio — Não obriga a cortar o pão, o arroz e a batata</title>
+<meta name="description" content="Um método de alimentação assente na Dieta Mediterrânica, adaptado ao prato português do dia-a-dia. Escolher, trocar e combinar — para cuidar da glicémia sem comer à parte da família.">
+
+<!-- ══════════════════════════════════════════════════════════════
+     GLICÉMIA EM EQUILÍBRIO — Página de vendas (PT-PT)
+     Ficheiro único, autocontido. Mobile-first. Coluna única.
+
+     SISTEMA VISUAL: Fraunces (display) + Inter (corpo), tokens oklch,
+     --radius:1rem, cartões 1rem, botões pill, acento coral no CTA.
+
+     ⚠️ ORTOGRAFIA: pré-Acordo, conforme o documento de copy
+        (reflecte, objecção, exactamente). Excepções decididas pelo cliente:
+        · "Atividade" (Pilar 3) e "objetivo" (Bloco 5B) — grafia pós-Acordo,
+          por decisão expressa do cliente. O resto da página é pré-Acordo.
+        · nomes oficiais — "Direção-Geral da Saúde" é como o organismo se escreve
+
+     REGRAS DE MONTAGEM:
+       · 6 CTA com texto DIFERENTE por bloco (tabela de CTA aprovada) →
+         checkout do COMPLETO + 1 botão próprio para o ESSENCIAL na oferta
+       · BLOCOS RETIRADOS a pedido do cliente (daí os saltos na numeração):
+         B3 Ponte · B7 Benefícios · B10B Recapitulação
+       · Aviso médico em 2 sítios: no FAQ e no rodapé
+         (⚠️ o aviso sob o CTA do hero foi removido a pedido)
+       · Sem contadores, sem "só hoje", sem número de vagas
+       · Bloco 9 (prova social) está COMENTADO e fica fora da página
+         até existirem depoimentos reais com autorização
+       · Nunca descrever o produto como "PDF" ou "área de membros"
+
+     PLACEHOLDERS (procura por "INSERIR"):
+       1. [INSERIR LINK HOTMART COMPLETO]  → 6 CTA + barra sticky
+       2. [INSERIR LINK HOTMART ESSENCIAL] → botão do plano Essencial
+       3. Bloco 9 comentado                → depoimentos reais
+       4. imagens/ → prato-empilhado.jpg e prato-equilibrado.jpg (Bloco 4)
+          e pordentro-plano.webp/.jpg (Bloco 8). Ver os avisos em cada bloco:
+          há duas verificações por fazer antes de publicar.
+       5. Links legais no rodapé
+
+     PREÇOS: Essencial 7,90€ · Completo 14,90€ · Garantia 15 dias
+
+     ⚠️ MÉTODOS DE PAGAMENTO: a lista do bloco da oferta tem de espelhar
+        exactamente o que está activo no checkout Hotmart. Não acrescentar
+        logótipos de marca (MB WAY, Visa, PayPal) sem confirmação.
+     ══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════  TOKENS  ═══════════════ */
+:root{
+  --radius:1rem;
+
+  --background:oklch(99.5% .003 100);
+  --surface:oklch(97.5% .006 120);
+  --cream:oklch(97% .012 95);
+  --foreground:oklch(18% .02 160);
+  --muted:oklch(96.5% .006 150);
+  --muted-foreground:oklch(48% .015 180);
+  --card:oklch(100% 0 0);
+
+  --forest:oklch(36% .05 160);
+  --forest-deep:oklch(24% .045 165);
+  --mint:oklch(72% .09 160);
+  --mint-soft:oklch(94% .03 155);
+  --petrol:oklch(45% .06 220);
+  --petrol-soft:oklch(92% .02 220);
+
+  --cta:oklch(68% .19 45);
+  --cta-hover:oklch(62% .2 42);
+
+  /* vermelho de alerta — só para a moldura do Prato Empilhado */
+  --red:oklch(53% .22 27);
+  --red-soft:oklch(95% .03 27);
+
+  --border:oklch(92% .005 150);
+  --ring:oklch(55% .06 160);
+
+  --font-display:"Fraunces", ui-serif, Georgia, serif;
+  --font-sans:"Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --wrap:44rem;
+  --wrap-wide:60rem;
+}
+
+/* ═══════════════  BASE  ═══════════════ */
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--background);
+  color:var(--foreground);
+  font-family:var(--font-sans);
+  font-size:1.125rem;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:600;
+  letter-spacing:-.022em;
+  line-height:1.1;
+  color:var(--forest-deep);
+  margin:0 0 .5em;
+  text-wrap:balance;
+}
+h1{font-size:clamp(2rem,6.2vw,3.15rem); line-height:1.08;}
+h2{font-size:clamp(1.7rem,5vw,2.4rem); line-height:1.14;}
+h3{font-family:var(--font-sans); font-size:1.1rem; font-weight:600; letter-spacing:-.012em; line-height:1.4; margin:0 0 .35rem;}
+
+.hl{font-style:italic; font-weight:500; color:var(--forest);}
+
+p{margin:0 0 1.1em;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:600; color:var(--forest-deep);}
+em{font-style:italic;}
+a{color:var(--forest);}
+img{max-width:100%; height:auto; display:block;}
+
+.wrap{width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:1.25rem;}
+.wrap-wide{width:100%; max-width:var(--wrap-wide); margin-inline:auto; padding-inline:1.25rem;}
+.wrap-head{max-width:var(--wrap); margin-inline:auto;}
+
+section{padding-block:4rem;}
+@media (min-width:640px){ section{padding-block:5rem;} }
+
+.lead{font-size:clamp(1.1rem,3.4vw,1.2rem); line-height:1.72; color:var(--muted-foreground); text-wrap:pretty;}
+.bg-surface{background:var(--surface);}
+.bg-cream{background:var(--cream);}
+
+/* ═══════════════  EYEBROW  ═══════════════ */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--mint-soft);
+  color:var(--forest);
+  border-radius:9999px;
+  padding:.375rem .875rem;
+  font-size:.7rem; font-weight:600;
+  letter-spacing:.13em; text-transform:uppercase;
+  line-height:1.45;
+  margin:0 0 1.35rem;
+  text-align:left;
+}
+.eyebrow::before{content:""; flex:none; width:6px; height:6px; border-radius:9999px; background:var(--mint);}
+
+/* ═══════════════  CARTÕES  ═══════════════ */
+.card{
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius:var(--radius);
+  padding:1.5rem 1.4rem;
+  box-shadow:0 1px 2px #14281e0a, 0 8px 24px -8px #14281e14;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.card:hover{transform:translateY(-2px); box-shadow:0 2px 4px #14281e0f, 0 16px 40px -12px #14281e24;}
+
+/* ═══════════════  BOTÕES  ═══════════════ */
+.cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  width:100%;
+  min-height:60px;
+  padding:1.15rem 1.6rem;
+  background:var(--cta);
+  color:#fff;
+  font-family:var(--font-sans);
+  font-size:clamp(.98rem,3vw,1.1rem);
+  font-weight:600;
+  letter-spacing:-.01em;
+  line-height:1.3;
+  text-align:center;
+  text-decoration:none;
+  border:0;
+  border-radius:9999px;
+  box-shadow:0 1px 0 0 #ffffff40 inset,
+             0 10px 30px -10px color-mix(in oklab, var(--cta) 55%, transparent),
+             0 2px 6px -1px color-mix(in oklab, var(--cta) 30%, transparent);
+  transition:background .3s ease, transform .3s ease, box-shadow .3s ease;
+  text-wrap:balance;
+}
+.cta:hover{background:var(--cta-hover); transform:translateY(-2px);}
+.cta:active{transform:translateY(0);}
+.cta:focus-visible{outline:2px solid var(--forest); outline-offset:3px;}
+.cta .arrow{transition:transform .3s ease; flex:none;}
+.cta:hover .arrow{transform:translateX(4px);}
+@media (min-width:640px){ .cta{width:auto; padding-inline:2.4rem;} }
+
+.cta-block{margin-top:2.25rem; text-align:center;}
+.cta-note{
+  margin:1rem auto 0;
+  max-width:32rem;
+  font-size:.85rem; line-height:1.6;
+  color:var(--muted-foreground);
+  text-align:center;
+}
+
+/* CTA dentro do card de preço */
+.cta--plan{width:100%; margin-top:auto; min-height:56px; padding-inline:1.25rem; font-size:1rem;}
+@media (min-width:640px){ .cta--plan{width:100%; padding-inline:1.25rem;} }
+.cta--ghost{
+  background:transparent; color:var(--forest);
+  border:1.5px solid color-mix(in oklab, var(--forest) 45%, transparent);
+  box-shadow:none;
+}
+.cta--ghost:hover{background:var(--mint-soft); color:var(--forest-deep); border-color:var(--forest); box-shadow:none;}
+
+/* ═══════════════  CHIPS  ═══════════════ */
+.chips{list-style:none; margin:1.5rem 0 0; padding:0; display:flex; flex-wrap:wrap; gap:.5rem;}
+.chips--center{justify-content:center;}
+.chip{
+  display:inline-flex; align-items:center; gap:.4rem;
+  font-size:.8125rem; font-weight:500;
+  color:var(--forest);
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius:9999px;
+  padding:.4rem .85rem;
+  white-space:nowrap;
+  box-shadow:0 1px 2px #14281e0a;
+}
+.chip svg{color:var(--mint); flex:none;}
+.chip--mint{background:var(--mint-soft); border-color:transparent;}
+.chip--mint svg{color:var(--forest);}
+
+/* ═══════════════  B1 · BARRA DE TOPO  ═══════════════ */
+.topbar{
+  background:var(--forest-deep);
+  color:#fff;
+  text-align:center;
+  padding:.7rem 1rem;
+  font-size:.8125rem; font-weight:500; line-height:1.6;
+}
+.topbar .sep{opacity:.4; padding-inline:.5rem;}
+
+/* ═══════════════  B2 · HERO  ═══════════════ */
+.hero{position:relative; overflow:hidden; padding-block:3.25rem 3.75rem;}
+@media (min-width:640px){ .hero{padding-block:4.25rem 4.75rem;} }
+.blob{position:absolute; border-radius:9999px; filter:blur(64px); z-index:0; pointer-events:none;}
+.blob--mint{top:-16rem; left:50%; transform:translateX(-50%); width:min(56rem,140vw); height:32rem; background:color-mix(in oklab, var(--mint-soft) 60%, transparent);}
+.blob--petrol{right:-8rem; top:38%; width:26rem; height:26rem; background:color-mix(in oklab, var(--petrol-soft) 50%, transparent);}
+.hero .wrap{position:relative; z-index:1;}
+.hero .lead{max-width:38rem; margin-bottom:1.9rem;}
+
+/* painel de factos — lista leve, não caixa pesada */
+.facts{list-style:none; margin:0 0 2.25rem; padding:0; display:grid; gap:.6rem; max-width:34rem;}
+.facts li{display:flex; align-items:flex-start; gap:.7rem; font-size:1.02rem; line-height:1.5; color:var(--forest-deep); font-weight:500;}
+.facts .tick{
+  flex:none; margin-top:.15rem;
+  width:22px; height:22px; border-radius:9999px;
+  background:var(--mint-soft); color:var(--forest);
+  display:grid; place-items:center;
+}
+.hero__cta{text-align:center;}
+.hero__cta .cta{max-width:26rem; margin-inline:auto;}
+
+
+
+/* ═══════════════  B4 · MECANISMO DO PROBLEMA  ═══════════════ */
+.name-it{
+  margin:2rem 0;
+  padding:1.4rem 1.5rem;
+  border-radius:var(--radius);
+  background:var(--forest-deep);
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,3.8vw,1.4rem);
+  font-weight:500; line-height:1.35; letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.name-it strong{color:var(--mint); font-weight:600;}
+.name-it em{
+  display:block; margin-top:.55rem;
+  font-size:.82em; font-style:italic; font-weight:400;
+  color:color-mix(in oklab, var(--mint) 82%, #fff);
+}
+
+/* ═══════════════  B5 · MECANISMO DA SOLUÇÃO  ═══════════════ */
+.steps{display:grid; gap:1rem; margin-top:2rem;}
+@media (min-width:860px){ .steps{grid-template-columns:repeat(3,1fr);} }
+.step{position:relative; padding-top:1.9rem;}
+.step__n{
+  position:absolute; top:-.9rem; left:1.4rem;
+  width:2.4rem; height:2.4rem;
+  display:grid; place-items:center;
+  border-radius:9999px;
+  background:var(--forest); color:#fff;
+  font-family:var(--font-display); font-size:1.05rem; font-weight:600;
+  box-shadow:0 6px 18px -6px color-mix(in oklab, var(--forest) 60%, transparent);
+}
+.step h3{
+  font-family:var(--font-sans);
+  font-size:.82rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:.6rem;
+}
+.step p{margin:0; font-size:1rem; line-height:1.6; color:var(--muted-foreground);}
+.step p strong{display:block; margin-bottom:.4rem;}
+
+.slogan{
+  margin:2.25rem 0 0;
+  text-align:center;
+  font-family:var(--font-display);
+  font-size:clamp(1.3rem,4.4vw,1.75rem);
+  font-weight:600; letter-spacing:-.025em; line-height:1.25;
+  color:var(--forest-deep);
+}
+
+/* ═══════════════  B6 · PROVA  ═══════════════ */
+.stat{margin-top:1.75rem;}
+.stat__n{
+  display:block;
+  font-family:var(--font-display);
+  font-size:clamp(2.9rem,10vw,4.25rem);
+  font-weight:600; line-height:.95; letter-spacing:-.04em;
+  color:var(--forest);
+  font-variant-numeric:tabular-nums;
+  margin-bottom:.4rem;
+}
+.stat p{margin:0 0 .5rem; font-size:1.06rem; line-height:1.6;}
+.stat cite{display:block; font-style:normal; font-size:.8rem; line-height:1.5; color:var(--muted-foreground);}
+.stat + .stat{margin-top:2.25rem; padding-top:2.25rem; border-top:1px solid var(--border);}
+.closer{
+  margin-top:2.5rem;
+  padding:1.4rem 1.5rem;
+  border-radius:var(--radius);
+  background:var(--mint-soft);
+  font-size:1.06rem; line-height:1.6;
+  color:var(--forest-deep);
+}
+
+/* ═══════════════  SUB-TÍTULO DE SECÇÃO  ═══════════════ */
+.sub-h{
+  display:flex; align-items:center; gap:.75rem;
+  font-size:.72rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--forest);
+  margin:3rem 0 1.1rem;
+}
+.sub-h::after{content:""; flex:1; height:1px; background:color-mix(in oklab, var(--border) 80%, transparent);}
+
+/* ═══════════════  B8 · O QUE VAI RECEBER  ═══════════════ */
+.gifts{display:grid; gap:1.15rem; margin-top:1.5rem;}
+@media (min-width:820px){
+  .gifts{grid-template-columns:1fr 1fr;}
+  .gift--hero{grid-column:1 / -1;}
+}
+.gift{position:relative; display:flex; flex-direction:column; padding:1.5rem 1.4rem 1.4rem;}
+.gift__head{display:flex; align-items:flex-start; gap:.85rem; margin-bottom:1.15rem;}
+.gift__tick{
+  flex:none; width:2.1rem; height:2.1rem;
+  border-radius:9999px;
+  background:var(--mint-soft); color:var(--forest);
+  display:grid; place-items:center;
+}
+.gift__tick svg{width:1.05rem; height:1.05rem;}
+.gift__k{
+  display:block; margin:0 0 .25rem;
+  font-size:.66rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--forest);
+}
+.gift h3{
+  font-family:var(--font-display);
+  font-size:1.2rem; font-weight:600; letter-spacing:-.02em; line-height:1.22;
+  color:var(--forest-deep);
+  margin:0;
+}
+.gift__art{
+  display:block; width:100%; height:auto;
+  margin-bottom:1.15rem;
+  border-radius:.8rem;
+  overflow:hidden;
+  background:var(--surface);
+}
+.gift picture{display:block; margin-bottom:1.15rem;}
+/* páginas do produto: formato vertical, ancoradas no topo para se ler o título */
+.gift__art--pag{aspect-ratio:3/4; object-fit:cover; object-position:top center;}
+.gift picture .gift__art{margin-bottom:0;}
+.gift p{margin:0 0 1.25rem; font-size:1rem; line-height:1.6; color:var(--muted-foreground);}
+.gift__plan{
+  align-self:flex-start; margin-top:auto;
+  font-size:.63rem; font-weight:700;
+  letter-spacing:.11em; text-transform:uppercase; white-space:nowrap;
+  border-radius:9999px; padding:.34rem .75rem;
+  background:var(--mint-soft); color:var(--forest);
+}
+.gift__plan--pro{background:var(--petrol-soft); color:var(--petrol);}
+.gift__plan--bonus{background:color-mix(in oklab, var(--cta) 13%, transparent); color:oklch(46% .15 42);}
+
+/* ── cartão 1 · protagonista ── */
+.gift--hero{
+  margin-top:.85rem;
+  padding-top:1.95rem;
+  border-color:transparent;
+  box-shadow:0 0 0 2px var(--forest), 0 1px 2px #14281e0a, 0 16px 40px -12px #14281e2e;
+}
+.gift--hero:hover{box-shadow:0 0 0 2px var(--forest), 0 2px 4px #14281e0f, 0 22px 50px -14px #14281e36;}
+.gift__seal{
+  position:absolute; top:-.8rem; left:1.5rem;
+  background:var(--cta); color:#fff;
+  font-size:.64rem; font-weight:700;
+  letter-spacing:.11em; text-transform:uppercase;
+  border-radius:9999px; padding:.32rem .8rem;
+  box-shadow:0 1px 0 0 #ffffff40 inset, 0 6px 18px -6px color-mix(in oklab, var(--cta) 60%, transparent);
+}
+.gift--hero h3{font-size:1.4rem;}
+.gift--hero > p{font-size:1.05rem;}
+
+/* ── cartões deitados: arte ao lado do texto ── */
+@media (min-width:820px){
+  .gift--wide{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 34%;
+    grid-template-rows:auto auto 1fr;
+    column-gap:1.9rem;
+    align-items:start;
+    padding:1.6rem;
+  }
+  .gift--wide.gift--hero{grid-template-columns:minmax(0,1fr) 40%; padding:1.95rem 1.7rem 1.7rem;}
+  .gift--wide .gift__head{grid-column:1; grid-row:1;}
+  .gift--wide > p{grid-column:1; grid-row:2;}
+  .gift--wide .gift__plan{grid-column:1; grid-row:3; justify-self:start; align-self:start; margin-top:0;}
+  .gift--wide .gift__art,
+  .gift--wide picture{grid-column:2; grid-row:1 / span 3; margin:0; align-self:center;}
+}
+
+/* ── cartão 7 · bónus ── */
+.gift--bonus{
+  border-color:transparent;
+  box-shadow:0 0 0 2px color-mix(in oklab, var(--cta) 55%, transparent),
+             0 1px 2px #14281e0a, 0 14px 36px -12px color-mix(in oklab, var(--cta) 28%, transparent);
+}
+.gift--bonus:hover{
+  box-shadow:0 0 0 2px var(--cta),
+             0 2px 4px #14281e0f, 0 20px 46px -14px color-mix(in oklab, var(--cta) 36%, transparent);
+}
+.gift--bonus .gift__tick{background:color-mix(in oklab, var(--cta) 16%, transparent); color:var(--cta);}
+.gift--bonus .gift__k{color:var(--cta);}
+/* fotografia do diário: é um retrato 3:4. Empilhada (< 820px) fica limitada e
+   centrada para não ocupar o cartão todo; ao lado do texto volta a encher a coluna. */
+.gift--bonus picture{max-width:17rem; margin-left:auto; margin-right:auto;}
+@media (min-width:820px){
+  .gift--bonus picture{max-width:none;}
+}
+
+/* ── progressão: comprar → cozinhar → comer → acompanhar ── */
+.flow{list-style:none; margin:1.5rem 0 0; padding:0; display:grid; gap:1.2rem;}
+.flow > li{position:relative; padding-left:2.85rem;}
+.flow > li::before{
+  content:""; position:absolute; left:.87rem; top:3.35rem; bottom:-1.2rem;
+  border-left:2px dotted color-mix(in oklab, var(--forest) 38%, transparent);
+}
+.flow > li:last-child::before{display:none;}
+.flow > li:last-child .flow__n{background:var(--cta);}
+.flow__n{
+  position:absolute; left:0; top:1.4rem; z-index:1;
+  width:1.85rem; height:1.85rem; border-radius:9999px;
+  background:var(--forest); color:#fff;
+  display:grid; place-items:center;
+  font-family:var(--font-display); font-size:.9rem; font-weight:600;
+  box-shadow:0 0 0 4px var(--background);
+}
+@media (min-width:820px){
+  .flow > li{padding-left:3.6rem;}
+  .flow > li::before{left:1.15rem; top:3.9rem;}
+  .flow__n{width:2.3rem; height:2.3rem; top:1.6rem; font-size:1.05rem;}
+}
+
+/* ═══════════════  B8 · POR DENTRO DO PLANO COMPLETO  ═══════════════ */
+.inside{
+  margin-top:3rem;
+  padding:clamp(1.6rem,4vw,2.25rem);
+  border-radius:var(--radius);
+  background:var(--cream);
+  border:1px solid color-mix(in oklab, var(--border) 60%, transparent);
+  display:grid; gap:1.5rem;
+}
+@media (min-width:820px){
+  .inside{grid-template-columns:1fr 46%; gap:2.25rem; align-items:center;}
+}
+.inside h3{
+  font-family:var(--font-display);
+  font-size:clamp(1.35rem,3.6vw,1.7rem);
+  font-weight:600; letter-spacing:-.022em; line-height:1.18;
+  color:var(--forest-deep);
+  margin:0 0 .9rem;
+}
+.inside p{margin:0 0 .9rem; font-size:1.02rem; line-height:1.62; color:var(--muted-foreground);}
+.inside p:last-child{margin-bottom:0;}
+.inside__img{
+  display:block; width:100%; height:auto;
+  border-radius:.85rem;
+  background:var(--surface);
+}
+
+/* ═══════════════  B10 · OFERTA  ═══════════════ */
+.plans{display:grid; gap:1.25rem; margin-top:2.25rem;}
+@media (min-width:760px){ .plans{grid-template-columns:1fr 1fr; align-items:start;} }
+.plan{position:relative; padding:1.9rem 1.6rem 1.75rem; display:flex; flex-direction:column;}
+.plan--reco{
+  border-color:transparent;
+  box-shadow:0 0 0 2px var(--forest), 0 1px 2px #14281e0a, 0 16px 40px -12px #14281e2e;
+}
+.plan--reco:hover{box-shadow:0 0 0 2px var(--forest), 0 2px 4px #14281e0f, 0 22px 50px -14px #14281e36;}
+.plan__tag{
+  position:absolute; top:-.8rem; left:1.6rem;
+  background:var(--cta); color:#fff;
+  font-size:.65rem; font-weight:700;
+  letter-spacing:.11em; text-transform:uppercase;
+  border-radius:9999px; padding:.32rem .8rem;
+  box-shadow:0 1px 0 0 #ffffff40 inset, 0 6px 18px -6px color-mix(in oklab, var(--cta) 60%, transparent);
+}
+.plan__name{font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-foreground); margin:0 0 .55rem;}
+.plan__price{
+  font-family:var(--font-display);
+  font-size:3.15rem; font-weight:600; line-height:1; letter-spacing:-.035em;
+  font-variant-numeric:tabular-nums;
+  color:var(--forest-deep);
+  margin:0 0 .25rem;
+}
+.plan--reco .plan__price{color:var(--forest);}
+.plan__price span{font-family:var(--font-sans); font-size:1.2rem; font-weight:500; color:var(--muted-foreground); margin-left:.15rem; letter-spacing:0;}
+.plan__k{
+  margin:0 0 .9rem;
+  padding-top:1.25rem;
+  border-top:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  font-size:.68rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--forest);
+}
+.plan__k + ul{padding-top:0 !important; border-top:0 !important;}
+.plan__once{font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted-foreground); margin:0 0 1.25rem;}
+.plan ul{list-style:none; margin:0 0 1.5rem; padding:1.25rem 0 0; border-top:1px solid color-mix(in oklab, var(--border) 70%, transparent);}
+.plan li{position:relative; padding-left:1.75rem; margin-bottom:.65rem; font-size:1rem; line-height:1.5;}
+.plan li:last-child{margin-bottom:0;}
+.plan li::before{content:""; position:absolute; left:0; top:.42rem; width:1.05rem; height:1.05rem; border-radius:9999px; background:var(--mint-soft);}
+.plan li::after{content:""; position:absolute; left:.28rem; top:.72rem; width:8px; height:4px; border-left:2px solid var(--forest); border-bottom:2px solid var(--forest); transform:rotate(-45deg);}
+
+.offer-meta{text-align:center; margin-top:1.5rem; font-size:.95rem; color:var(--muted-foreground); font-weight:500;}
+
+/* métodos de pagamento */
+.pay{margin:2rem auto 0; max-width:38rem; text-align:center;}
+.pay__k{margin:0 0 .9rem; font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-foreground);}
+.pay__list{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center;}
+.pay__list li{
+  display:inline-flex; align-items:center; gap:.45rem;
+  font-size:.875rem; font-weight:500;
+  color:var(--forest-deep);
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius:9999px;
+  padding:.45rem .9rem .45rem .5rem;
+  box-shadow:0 1px 2px #14281e0a;
+}
+.pay__badge{
+  display:inline-grid; place-items:center;
+  min-width:1.85rem; height:1.35rem; padding-inline:.35rem;
+  border-radius:5px;
+  background:var(--forest); color:#fff;
+  font-size:.6rem; font-weight:700; letter-spacing:.03em;
+}
+.pay__badge svg{width:1rem; height:1rem;}
+.pay__note{margin:.9rem 0 0; font-size:.8rem; line-height:1.55; color:var(--muted-foreground);}
+
+
+
+/* ═══════════════  B13 · GARANTIA  ═══════════════ */
+.guarantee{text-align:center; padding:clamp(2rem,6vw,3rem) clamp(1.3rem,5vw,2.5rem); background:var(--mint-soft); border:0; box-shadow:none;}
+.guarantee:hover{transform:none; box-shadow:none;}
+.guarantee picture{display:block;}
+.seal{
+  display:block;
+  width:clamp(140px,36vw,178px); height:auto;
+  margin:0 auto 1.5rem;
+  filter:drop-shadow(0 12px 26px #14281e2e);
+}
+.guarantee p{max-width:34rem; margin-inline:auto; color:var(--forest-deep);}
+
+/* ═══════════════  B14 · FAQ  ═══════════════ */
+.faq{margin-top:1.75rem; display:grid; gap:.75rem;}
+.faq details{
+  overflow:hidden;
+  border-radius:var(--radius);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  background:var(--card);
+  padding-inline:1.25rem;
+  box-shadow:0 1px 2px #14281e0a, 0 8px 24px -8px #14281e14;
+}
+.faq summary{
+  list-style:none; cursor:pointer;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;
+  padding:1.25rem 0;
+  min-height:56px;
+  font-size:1.05rem; font-weight:600; letter-spacing:-.012em; line-height:1.45;
+  color:var(--forest-deep);
+  transition:color .3s ease;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary:hover{color:var(--forest);}
+.faq summary:focus-visible{outline:2px solid var(--ring); outline-offset:2px; border-radius:.5rem;}
+.faq .chev{
+  flex:none; margin-top:.3rem;
+  width:1.75rem; height:1.75rem; border-radius:9999px;
+  background:var(--mint-soft); color:var(--forest);
+  display:grid; place-items:center;
+  transition:transform .3s ease;
+}
+.faq details[open] .chev{transform:rotate(180deg);}
+.faq .answer{padding:0 0 1.35rem; max-width:40rem; font-size:1.02rem; color:var(--muted-foreground); animation:slide .3s ease;}
+@keyframes slide{from{opacity:0; transform:translateY(-6px);} to{opacity:1; transform:none;}}
+
+/* ═══════════════  B15 · CTA FINAL  ═══════════════ */
+.final{position:relative; overflow:hidden; background:var(--forest-deep); color:#fff; text-align:center;}
+.final::before{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--mint) 22%, transparent), transparent 70%),
+    linear-gradient(135deg, color-mix(in oklab, var(--forest-deep) 90%, transparent), color-mix(in oklab, var(--forest) 80%, transparent));
+}
+.final .wrap{position:relative; z-index:1;}
+.final h2{color:#fff;}
+.final .hl{color:var(--mint);}
+.final .lead{color:rgba(255,255,255,.82); margin-inline:auto; max-width:34rem;}
+.final .slogan{color:#fff;}
+.final strong{color:#fff;}
+.final .cta-note{color:rgba(255,255,255,.62);}
+
+/* ═══════════════  RODAPÉ  ═══════════════ */
+footer{
+  background:var(--forest-deep);
+  color:rgba(255,255,255,.62);
+  font-size:.875rem; line-height:1.7;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-block:2.5rem 7.5rem;
+}
+footer nav{margin-bottom:.9rem;}
+footer nav a{color:rgba(255,255,255,.8); text-decoration:none; padding:.35rem .1rem; display:inline-block; transition:color .3s ease;}
+footer nav a:hover{color:#fff; text-decoration:underline;}
+footer .dot{opacity:.35; padding-inline:.5rem;}
+footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255,255,255,.45);}
+@media (min-width:900px){ footer{padding-bottom:3rem;} }
+
+/* ═══════════════  CTA STICKY (mobile)  ═══════════════ */
+.sticky{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  -webkit-backdrop-filter:saturate(160%) blur(18px); backdrop-filter:saturate(160%) blur(18px);
+  background:rgba(255,255,255,.86);
+  border-top:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));
+  transform:translateY(115%);
+  transition:transform .35s ease;
+}
+.sticky.is-visible{transform:translateY(0);}
+.sticky .cta{width:100%; min-height:54px; font-size:.98rem; padding-block:.85rem;}
+.sticky small{display:block; text-align:center; margin-top:.45rem; font-size:.75rem; font-weight:500; color:var(--muted-foreground);}
+@media (min-width:900px){ .sticky{display:none;} }
+
+/* ═══════════════  B4 · PRATO EMPILHADO vs PRATO EQUILIBRADO  ═══════════════ */
+.compare{display:grid; gap:1rem; margin:2rem 0 1.5rem;}
+@media (min-width:740px){ .compare{grid-template-columns:1fr 1fr;} }
+.dish{padding:0; overflow:hidden; border-width:2px;}
+.dish__k{
+  display:flex; align-items:center; gap:.6rem;
+  margin:0; padding:.85rem 1.25rem;
+  font-size:.72rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  line-height:1.4;
+}
+.dish__k svg{flex:none;}
+.dish--bad{
+  border-color:var(--red);
+  box-shadow:0 1px 2px #14281e0a, 0 10px 28px -10px color-mix(in oklab, var(--red) 40%, transparent);
+}
+.dish--bad:hover{box-shadow:0 2px 4px #14281e0f, 0 18px 42px -12px color-mix(in oklab, var(--red) 45%, transparent);}
+.dish--bad .dish__k{background:var(--red); color:#fff;}
+.dish--good{
+  background:var(--mint-soft);
+  border-color:var(--forest);
+  box-shadow:0 1px 2px #14281e0a, 0 10px 28px -10px color-mix(in oklab, var(--forest) 32%, transparent);
+}
+.dish--good li{border-bottom-color:color-mix(in oklab, var(--forest) 20%, transparent);}
+.dish--good:hover{box-shadow:0 2px 4px #14281e0f, 0 18px 42px -12px color-mix(in oklab, var(--forest) 38%, transparent);}
+.dish--good .dish__k{background:var(--forest); color:#fff;}
+
+/* a fotografia entra aqui — mesmo enquadramento nos dois cartões */
+.dish__art{
+  display:block; width:100%;
+  aspect-ratio:4/3; object-fit:cover; object-position:center;
+  background:var(--surface);
+}
+/* as duas fotografias partilham o mesmo enquadramento, venham como vierem */
+.dish__art{max-width:100%;}
+.dish picture{display:block;}
+.dish ul{list-style:none; margin:0; padding:.3rem 1.25rem 1.15rem;}
+.dish li{
+  position:relative;
+  padding:.55rem 0 .55rem 1.2rem;
+  font-size:.98rem; line-height:1.45; font-weight:500;
+  color:var(--forest-deep);
+  border-bottom:1px solid color-mix(in oklab, var(--border) 55%, transparent);
+}
+.dish li:last-child{border-bottom:0;}
+.dish li::before{content:""; position:absolute; left:0; top:1.03rem; width:6px; height:6px; border-radius:9999px;}
+.dish--bad li::before{background:var(--red);}
+.dish--good li::before{background:var(--forest);}
+
+/* ═══════════════  B5 · LINHA DO TEMPO DE HÁBITO  ═══════════════ */
+.tl{list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:2rem;}
+.tl li{
+  position:relative;
+  background:var(--mint-soft);
+  border-radius:var(--radius);
+  padding:1.15rem 1.25rem;
+}
+.tl li::after{
+  content:""; position:absolute; left:50%; top:-2rem;
+  height:2rem; border-left:2px dotted color-mix(in oklab, var(--forest) 38%, transparent);
+}
+.tl li:first-child::after{display:none;}
+.tl__k{
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-size:.7rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:.4rem;
+}
+.tl__k::before{content:""; width:9px; height:9px; border-radius:9999px; background:var(--forest); box-shadow:0 0 0 4px color-mix(in oklab, var(--forest) 14%, transparent);}
+.tl p{margin:0; font-size:1rem; line-height:1.5; color:var(--forest-deep); font-weight:500;}
+.tl p strong{display:block; margin-bottom:.3rem;}
+@media (min-width:740px){
+  .tl{grid-template-columns:repeat(3,1fr); gap:1.5rem;}
+  .tl li::after{left:-1.5rem; top:2.15rem; width:1.5rem; height:0; border-left:0; border-top:2px dotted color-mix(in oklab, var(--forest) 38%, transparent);}
+}
+
+/* ═══════════════  QUALIDADE DE VIDA  ═══════════════ */
+.qol{list-style:none; margin:1.9rem 0 0; padding:0; display:grid; gap:.8rem;}
+@media (min-width:720px){
+  .qol{grid-template-columns:1fr 1fr;}
+  .qol li:last-child{grid-column:1 / -1;}
+}
+.qol li{
+  position:relative;
+  padding:.95rem 1.25rem .95rem 2.9rem;
+  border-radius:var(--radius);
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  box-shadow:0 1px 2px #14281e0a, 0 6px 18px -10px #14281e14;
+  font-size:1rem; line-height:1.5; font-weight:500;
+  color:var(--forest-deep);
+  text-wrap:pretty;
+}
+.qol li::before{
+  content:""; position:absolute; left:1.25rem; top:1.5rem;
+  width:1.05rem; height:2px; border-radius:2px; background:var(--mint);
+}
+.qol-end{
+  max-width:38rem;
+  margin:2.4rem 0 0;
+  padding-left:1.35rem;
+  border-left:3px solid var(--mint);
+  font-family:var(--font-display);
+  font-size:clamp(1.1rem,3.4vw,1.35rem);
+  font-weight:500; line-height:1.42; letter-spacing:-.018em;
+  color:var(--forest-deep);
+  text-wrap:pretty;
+}
+
+/* ═══════════════  ENTRADA ANIMADA  ═══════════════ */
+.js .reveal{opacity:0; transform:translateY(24px);}
+.js .reveal.in{opacity:1; transform:none; transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);}
+.js .reveal.in > *{animation:rise .6s cubic-bezier(.16,1,.3,1) backwards;}
+.js .reveal.in > *:nth-child(1){animation-delay:.05s;}
+.js .reveal.in > *:nth-child(2){animation-delay:.12s;}
+.js .reveal.in > *:nth-child(3){animation-delay:.19s;}
+.js .reveal.in > *:nth-child(4){animation-delay:.26s;}
+.js .reveal.in > *:nth-child(n+5){animation-delay:.33s;}
+@keyframes rise{from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:none;}}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .js .reveal,.js .reveal.in,.js .reveal.in > *{opacity:1 !important; transform:none !important; animation:none !important;}
+  *{transition-duration:.01ms !important;}
+}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}
+</style>
+</head>
+<body>
+
+<!-- ══ BLOCO 1 — BARRA DE TOPO ══ -->
+<header class="topbar">
+  Acesso imediato<span class="sep">•</span>Pagamento único<span class="sep">•</span>Garantia de 15 dias
+</header>
+
+<main>
+
+<!-- ══ BLOCO 2 — HERO ══ -->
+<section class="hero" id="topo">
+  <div class="blob blob--mint" aria-hidden="true"></div>
+  <div class="blob blob--petrol" aria-hidden="true"></div>
+
+  <div class="wrap reveal">
+    <h1>Glicémia alta não obriga a cortar o pão, o arroz e a batata.
+      <span class="hl">Obriga a aprender a escolher, a trocar e a combinar.</span></h1>
+
+    <p class="lead">
+      Um método de alimentação assente na Dieta Mediterrânica, adaptado ao prato português do
+      dia-a-dia — para quem quer cuidar da glicémia sem passar o resto da vida a comer à parte
+      da família.
+    </p>
+
+    <ul class="facts">
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Método completo em 3 pilares</li>
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Feito para a comida que já se cozinha em Portugal</li>
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Qualquer pessoa consegue aplicar, desde o primeiro dia</li>
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fácil de seguir, sem contas nem pesagens</li>
+    </ul>
+
+    <div class="hero__cta">
+      <!-- CTA 1 de 6 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Quero equilibrar a minha glicémia
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+
+      <ul class="chips chips--center">
+        <li class="chip"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.7"/><path d="M8 4.4V8l2.4 1.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Acesso imediato</li>
+        <li class="chip"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.4 6.4 12 13 4.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pagamento único</li>
+        <li class="chip chip--mint"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1 2 3.6v4c0 3.5 2.5 6.6 6 7.4 3.5-.8 6-3.9 6-7.4v-4L8 1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Garantia de 15 dias</li>
+        <li class="chip">100% em português de Portugal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 3 — PONTE (logo a seguir ao hero) ══ -->
+<section class="bg-surface">
+  <div class="wrap reveal">
+    <h2>Imagine chegar à próxima análise
+      <span class="hl">sabendo que desta vez fez alguma coisa.</span></h2>
+
+    <p class="lead">
+      Sem dietas de fome. Sem abandonar a comida portuguesa. Sem viver a contar hidratos.
+      Apenas um método simples para saber como comer melhor e cuidar da sua glicémia no dia a dia.
+    </p>
+  </div>
+</section>
+
+<!-- ══ BLOCO 4 — MECANISMO DO PROBLEMA ══ -->
+<section>
+  <div class="wrap reveal">
+    <p class="eyebrow">Porque é que cortar o pão não chega</p>
+    <h2>O problema pode não estar no pão. <span class="hl">Pode estar no prato inteiro.</span></h2>
+
+    <p class="lead">
+      Quando a glicémia sobe, a primeira reação é cortar tudo. Mas a realidade à mesa é outra.
+    </p>
+    <p class="lead">
+      Um almoço português tradicional junta facilmente sopa de batata, pão, arroz e massa na
+      mesma refeição. O erro não é o que come, mas sim a forma como combina os alimentos.
+    </p>
+    <p class="lead">
+      Não precisa de passar fome. Precisa apenas de aprender a equilibrar o seu prato.
+    </p>
+    <p class="lead">Repare na diferença:</p>
+
+    <!-- ▸ INFOGRÁFICO — O PRATO EMPILHADO vs O PRATO EQUILIBRADO
+         Fotografias fornecidas pelo cliente, em imagens/.
+         Enquadramento fixo 4:3 com object-fit:cover — qualquer ficheiro
+         novo encaixa sem mexer no CSS; afinar só o object-position.
+
+         ✔ prato-equilibrado: recorte fechado da fotografia do prato
+           mediterrânico (a mesma origem da foto do cartão "O Método", mas
+           enquadramento diferente). Deixa de fora o pão, para o prato ter
+           mesmo UMA só fonte de hidratos — bate certo com a lista ao lado.
+
+         ⚠️ prato-empilhado: POR RESOLVER. A foto actual é uma composição
+           brasileira (feijão preto, farofa, bife, batata frita) e não mostra
+           nada do que a lista ao lado promete — sopa de batata, pão à mesa
+           e um doce a seguir. Substituir por um almoço português real. -->
+    <div class="compare">
+
+      <article class="card dish dish--bad">
+        <h3 class="dish__k">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 2.1 1.7 13.5h12.6L8 2.1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M8 6.5v3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="8" cy="11.7" r=".95" fill="currentColor"/>
+          </svg>
+          O Prato Empilhado
+        </h3>
+
+        <img class="dish__art" src="imagens/prato-empilhado.jpg" width="522" height="383"
+             style="object-position:center center"
+             loading="lazy" decoding="async"
+             alt="Prato com várias fontes de hidratos na mesma refeição.">
+
+        <ul>
+          <li>Sopa de batata</li>
+          <li>Pão à mesa</li>
+          <li>Arroz <strong>e</strong> batata no mesmo prato</li>
+          <li>Fruta ou um doce a seguir</li>
+        </ul>
+      </article>
+
+      <article class="card dish dish--good">
+        <h3 class="dish__k">
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5.2 8.2 7.1 10.1 10.9 5.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          O Prato Equilibrado
+        </h3>
+
+        <picture>
+          <source srcset="imagens/prato-equilibrado.webp" type="image/webp">
+          <img class="dish__art" src="imagens/prato-equilibrado.jpg" width="1040" height="780"
+               loading="lazy" decoding="async"
+               alt="Prato com peixe grelhado, brócolos, grelos, cenoura e batata pequena — metade de legumes e uma só fonte de hidratos.">
+        </picture>
+
+        <ul>
+          <li>Legumes ou salada a ocupar <strong>metade</strong> do prato</li>
+          <li>Uma fonte de proteína — peixe, ovo ou leguminosas</li>
+          <li>Azeite como gordura de eleição</li>
+          <li>Arroz <strong>ou</strong> batata — uma só fonte de hidratos</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="name-it">
+      Com o <strong>Prato Equilibrado</strong>, vai finalmente perceber o que pôr no prato sem
+      stress e sem cortar o que gosta
+      <em>— por menos de metade do preço de uma única consulta de nutrição.</em>
+    </p>
+
+  </div>
+</section>
+
+<!-- ══ BLOCO 5 — MECANISMO DA SOLUÇÃO ══ -->
+<section class="bg-cream">
+  <div class="wrap reveal">
+    <p class="eyebrow">O que muda</p>
+    <h2>Escolher. Trocar. <span class="hl">Combinar.</span></h2>
+
+    <p class="lead">
+      Não precisa de deixar de comer aquilo de que gosta. Precisa de aprender a montar melhor
+      o prato que já faz parte da sua vida.
+    </p>
+
+    <div class="steps">
+      <div class="card step">
+        <span class="step__n" aria-hidden="true">1</span>
+        <h3>Escolher</h3>
+        <p><strong>Saiba o que colocar no prato.</strong>Aprenda a distinguir as escolhas que fazem mais sentido para o seu dia a dia, sem precisar de pesar alimentos ou andar a contar hidratos.</p>
+      </div>
+      <div class="card step">
+        <span class="step__n" aria-hidden="true">2</span>
+        <h3>Trocar</h3>
+        <p><strong>Descubra pequenas trocas que fazem diferença.</strong>Pão, arroz, batata e outros alimentos continuam à mesa. O método mostra-lhe o que pode trocar por uma alternativa melhor e quando essa troca realmente vale a pena.</p>
+      </div>
+      <div class="card step">
+        <span class="step__n" aria-hidden="true">3</span>
+        <h3>Combinar</h3>
+        <p><strong>Aprenda a juntar os alimentos da forma certa.</strong>Não é apenas o alimento isolado. É o conjunto da refeição. Aprenda a combinar legumes, proteína, hidratos e gordura para deixar de olhar para cada alimento como “permitido” ou “proibido”.</p>
+      </div>
+    </div>
+
+    <!-- ▸ LINHA DO TEMPO DE HÁBITO — nunca de resultado clínico.
+         Não escrever aqui nada do género "a glicémia desce em X dias". -->
+    <p class="sub-h">Do primeiro dia ao hábito</p>
+
+    <ol class="tl">
+      <li>
+        <span class="tl__k">Dia 1</span>
+        <p><strong>Finalmente percebe o que está a fazer</strong>Começa a olhar para a sua alimentação de outra forma e percebe onde pode fazer mudanças simples.</p>
+      </li>
+      <li>
+        <span class="tl__k">Semana 1</span>
+        <p><strong>As primeiras trocas já fazem parte da rotina</strong>Começa a aplicar o método nas refeições que já costuma fazer, sem precisar de mudar a sua vida inteira.</p>
+      </li>
+      <li>
+        <span class="tl__k">Dia 21</span>
+        <p><strong>Já não precisa de pensar em cada escolha</strong>As novas formas de montar o prato já fazem parte da sua rotina.</p>
+      </li>
+    </ol>
+
+    <p class="slogan">Não é uma dieta para seguir durante algumas semanas. É aprender uma forma diferente de olhar para o prato.</p>
+
+    <div class="cta-block">
+      <!-- CTA 2 de 6 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Sim, quero comer pão e arroz sem culpa
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 5B — QUALIDADE DE VIDA ══ -->
+<section>
+  <div class="wrap reveal">
+    <p class="eyebrow">Porque é que isto importa de verdade</p>
+    <h2>Mais do que baixar números, <span class="hl">recuperar a sua qualidade de vida</span></h2>
+
+    <p class="lead">
+      Quando a alimentação deixa de ser uma fonte de preocupação, o dia também pode ficar mais
+      leve. Com o método, aprende a fazer escolhas mais simples à mesa, sem transformar cada
+      refeição num cálculo ou numa proibição.
+    </p>
+
+    <ul class="qol">
+      <li>Menos aquela sensação de sonolência depois do almoço</li>
+      <li>Energia mais constante ao longo do dia</li>
+      <li>Mais clareza para se concentrar no que precisa de fazer</li>
+      <li>Menos preocupação com o que pode ou não pode comer</li>
+      <li>Mais liberdade para comer com a família e participar nas refeições normalmente</li>
+    </ul>
+
+    <p class="qol-end">
+      O objetivo não é viver a pensar na glicémia. É aprender a organizar a alimentação para
+      voltar a viver o dia sem estar constantemente preocupado com ela.
+    </p>
+  </div>
+</section>
+
+<!-- ══ BLOCO 6 — PROVA ══ -->
+<section class="bg-surface">
+  <div class="wrap reveal">
+    <p class="eyebrow">O contexto português</p>
+    <h2>Não é um problema seu. <span class="hl">É um problema do país.</span></h2>
+
+    <div class="stat">
+      <span class="stat__n">14,2%</span>
+      <p>
+        dos adultos portugueses tinha diabetes em 2024 — <strong>o valor mais alto alguma vez
+        registado em Portugal.</strong>
+      </p>
+      <cite>Observatório Nacional da Diabetes / Sociedade Portuguesa de Diabetologia, “Diabetes: Factos e Números”.</cite>
+    </div>
+
+    <div class="stat">
+      <span class="stat__n">43%</span>
+      <p>
+        das pessoas entre os 20 e os 79 anos vive com diabetes ou com risco elevado de a
+        desenvolver, somando a hiperglicemia intermédia — aquilo a que se chama pré-diabetes.
+      </p>
+      <cite>Observatório Nacional da Diabetes / Sociedade Portuguesa de Diabetologia, “Diabetes: Factos e Números”.</cite>
+    </div>
+
+    <div class="stat">
+      <span class="stat__n">26%</span>
+      <p>
+        é a fatia de portugueses que segue de facto o padrão alimentar mediterrânico, num país
+        mediterrânico. <strong>Depois dos 65 anos, são 19%.</strong>
+      </p>
+      <cite>Direção-Geral da Saúde.</cite>
+    </div>
+
+    <div class="closer">
+      <p>Ou seja: a alimentação que o mundo inteiro copia de nós é aquela que deixámos de fazer.</p>
+      <p><strong>Este método não lhe traz uma dieta estrangeira. Traz de volta a nossa — adaptada a quem precisa de olhar para a glicémia.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 8 — O QUE VAI RECEBER ══ -->
+<section>
+  <div class="wrap-wide reveal">
+    <div class="wrap-head">
+      <p class="eyebrow">O que vai receber</p>
+      <h2>Tudo o que precisa para cuidar da sua glicémia — <span class="hl">sem complicar a sua vida</span></h2>
+
+      <p class="lead">
+        Não vai receber mais uma lista de proibições para guardar na gaveta. Vai receber um método
+        simples — escolher, trocar, combinar — e tudo o que precisa para o pôr em prática à mesa.
+      </p>
+    </div>
+
+    <!-- ▸ ILUSTRAÇÕES DOS CARTÕES
+         SVG planos, no sistema visual da página. Cada um segue o cartão a que
+         pertence. Para trocar por fotografia, substituir o <svg class="gift__art">
+         por <img class="gift__art" src="imagens/..." alt="..."> — o CSS aguenta. -->
+
+    <p class="sub-h">O método</p>
+
+    <div class="gifts">
+      <article class="card gift gift--wide gift--hero">
+        <span class="gift__seal">O coração do método</span>
+
+        <div class="gift__head">
+          <span class="gift__tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.4 8.5 6.5 11.6 12.6 4.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <h3>O Método Escolher, Trocar e Combinar</h3>
+          </div>
+        </div>
+
+        <picture>
+          <source srcset="imagens/metodo.webp" type="image/webp">
+          <img class="gift__art" src="imagens/metodo.jpg" width="1000" height="750"
+               loading="lazy" decoding="async"
+               alt="Prato com peixe grelhado, brócolos, grelos, cenoura e batata pequena, com pão, azeite e azeitonas ao lado.">
+        </picture>
+
+        <p>Pare de olhar para o pão, o arroz e a batata como alimentos proibidos. Aprenda a montar o prato português de outra forma: que trocas fazem sentido, o que pôr ao lado e por que ordem comer. Não precisa de comer outra coisa — precisa de organizar melhor o que já come.</p>
+
+        <span class="gift__plan">Essencial + Completo</span>
+      </article>
+
+      <article class="card gift">
+        <div class="gift__head">
+          <span class="gift__tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.4 8.5 6.5 11.6 12.6 4.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <h3>O Diagnóstico Descodificado</h3>
+          </div>
+        </div>
+
+        <picture>
+          <source srcset="imagens/diagnostico.webp" type="image/webp">
+          <img class="gift__art" src="imagens/diagnostico.jpg" width="1000" height="750"
+               loading="lazy" decoding="async"
+               alt="Uma folha de análises sobre a mesa, com uma lupa a ampliar uma das linhas de valores.">
+        </picture>
+
+        <p>Recebeu uma análise alterada e ficou sem saber o que aqueles números querem dizer? Compreenda a glicémia em jejum e a hemoglobina glicada em linguagem simples.</p>
+
+        <span class="gift__plan">Essencial + Completo</span>
+      </article>
+
+      <article class="card gift">
+        <div class="gift__head">
+          <span class="gift__tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.4 8.5 6.5 11.6 12.6 4.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <h3>Plano de Atividade Física Simples</h3>
+          </div>
+        </div>
+
+        <picture>
+          <source srcset="imagens/plano-atividade.webp" type="image/webp">
+          <img class="gift__art" src="imagens/plano-atividade.jpg" width="1000" height="750"
+               loading="lazy" decoding="async"
+               alt="Uma mulher a caminhar sem pressa numa rua calcetada de uma vila portuguesa.">
+        </picture>
+
+        <p>Sem ginásio, sem máquinas, sem horas livres. Pequenos movimentos para a vida real — sobretudo a seguir às refeições, que é quando mais conta.</p>
+
+        <span class="gift__plan">Essencial + Completo</span>
+      </article>
+    </div>
+
+    <p class="sub-h">E, no plano Completo, o método vira rotina</p>
+
+    <ol class="flow">
+      <li>
+        <span class="flow__n" aria-hidden="true">1</span>
+        <article class="card gift gift--wide">
+          <div class="gift__head">
+            <span class="gift__tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.4 8.5 6.5 11.6 12.6 4.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <span class="gift__k">Comprar</span>
+              <h3>Lista de Compras Inteligente</h3>
+            </div>
+          </div>
+  
+          <picture>
+          <source srcset="imagens/lista-compras.webp" type="image/webp">
+          <img class="gift__art gift__art--pag" src="imagens/lista-compras.jpg" width="800" height="1433"
+               loading="lazy" decoding="async"
+               alt="Página da Lista de Compras Inteligente, com os produtos organizados por secções: legumes, leguminosas, fruta, peixe e ovos, e mercearia.">
+        </picture>
+  
+          <p>Chega ao supermercado sem saber o que escolher? Lista organizada por secções, adaptada ao Continente, Pingo Doce e Lidl.</p>
+  
+          <span class="gift__plan gift__plan--pro">Completo</span>
+        </article>
+      </li>
+
+      <li>
+        <span class="flow__n" aria-hidden="true">2</span>
+        <article class="card gift gift--wide">
+          <div class="gift__head">
+            <span class="gift__tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.4 8.5 6.5 11.6 12.6 4.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <span class="gift__k">Cozinhar</span>
+              <h3>Livro de Receitas Mediterrânicas Portuguesas</h3>
+            </div>
+          </div>
+  
+          <picture>
+          <source srcset="imagens/livro-receitas.webp" type="image/webp">
+          <img class="gift__art gift__art--pag" src="imagens/livro-receitas.jpg" width="800" height="1433"
+               loading="lazy" decoding="async"
+               alt="Página do Livro de Receitas com a receita de bacalhau no forno com legumes e azeite: ingredientes, preparação e outras receitas portuguesas.">
+        </picture>
+  
+          <p>Saber o que comer é uma coisa; saber o que cozinhar amanhã é outra. Receitas com bacalhau, sardinha, sopa, leguminosas e azeite — sem ingredientes estranhos.</p>
+  
+          <span class="gift__plan gift__plan--pro">Completo</span>
+        </article>
+      </li>
+
+      <li>
+        <span class="flow__n" aria-hidden="true">3</span>
+        <article class="card gift gift--wide">
+          <div class="gift__head">
+            <span class="gift__tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.4 8.5 6.5 11.6 12.6 4.9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div>
+              <span class="gift__k">Comer</span>
+              <h3>Plano de 21 Dias</h3>
+            </div>
+          </div>
+  
+          <picture>
+          <source srcset="imagens/plano-21dias.webp" type="image/webp">
+          <img class="gift__art gift__art--pag" src="imagens/plano-21dias.jpg" width="800" height="1433"
+               loading="lazy" decoding="async"
+               alt="Página do Plano de 21 Dias, com as refeições das três semanas organizadas dia a dia.">
+        </picture>
+  
+          <p>Não quer passar 21 dias a perguntar “e agora, o que como?” Ementas prontas para as três primeiras semanas, para não decidir tudo sozinho.</p>
+  
+          <span class="gift__plan gift__plan--pro">Completo</span>
+        </article>
+      </li>
+
+      <li>
+        <span class="flow__n" aria-hidden="true">4</span>
+        <article class="card gift gift--wide gift--bonus">
+          <div class="gift__head">
+            <span class="gift__tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14.1c-.6 0-6.5-3.7-6.5-8A3.6 3.6 0 0 1 8 4a3.6 3.6 0 0 1 6.5 2.1c0 4.3-5.9 8-6.5 8Z" fill="currentColor"/></svg></span>
+            <div>
+              <span class="gift__k">Acompanhar</span>
+              <h3>Diário de Glicémia e Hábitos</h3>
+            </div>
+          </div>
+  
+          <!-- Fotografia do cliente (Diario_2K_*.jpeg). Servida recortada em 3:4:
+               o topo do original tinha o titulo sobreposto e ilegivel. -->
+          <picture>
+            <source srcset="imagens/diario-glicemia.webp" type="image/webp">
+            <img class="gift__art" src="imagens/diario-glicemia.jpg" width="800" height="1067"
+                 loading="lazy" decoding="async"
+                 alt="Diário de Glicémia e Hábitos aberto: página com campos para pequeno-almoço, almoço e jantar, glicémia pré e pós-prandial, movimento, sono e observações.">
+          </picture>
+  
+          <p>Para não confiar só na memória na próxima consulta. Registe os seus valores e hábitos e leve-os ao seu médico.</p>
+  
+          <span class="gift__plan gift__plan--bonus">Bónus exclusivo</span>
+        </article>
+      </li>
+    </ol>
+
+    <div class="cta-block">
+      <!-- CTA 3 de 6 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Sim, quero saber o que trocar no prato
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- ▸ Imagem do cliente: WebP com fallback JPEG. O PNG original (1,4 MB)
+         fica em imagens/ só como ficheiro-fonte e não é servido. -->
+    <div class="inside">
+      <div>
+        <h3>Por dentro do Plano Completo</h3>
+        <p>O método ensina-lhe o que fazer. O Plano Completo dá-lhe as ferramentas para não descobrir tudo sozinho.</p>
+        <p>Sabe o que <strong>escolher</strong>, o que <strong>trocar</strong> e como <strong>combinar</strong> — e ainda recebe as compras, as receitas e as ementas para começar desde o primeiro dia.</p>
+        <p>É a diferença entre saber o que devia fazer e ter tudo pronto para começar.</p>
+      </div>
+
+      <picture>
+        <source srcset="imagens/pordentro-plano.webp" type="image/webp">
+        <img class="inside__img" src="imagens/pordentro-plano.jpg"
+             width="1448" height="1086" loading="lazy" decoding="async"
+             alt="O Plano de 21 Dias num tablet, com o progresso e as refeições do dia, e uma receita de bacalhau no forno com legumes num telemóvel.">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!--
+  ══ BLOCO 9 — PROVA SOCIAL ══ (FORA DA PÁGINA, DE PROPÓSITO)
+
+  Só entra quando existirem depoimentos reais com autorização escrita.
+  Formato: conversa, primeiro nome e inicial do apelido.
+  SEM prints de análises e SEM valores clínicos.
+
+  ⚠️ Não substituir por texto ilustrativo, avatares genéricos ou conversas
+     encenadas. O custo de credibilidade é maior do que o ganho — uma página
+     sem prova social é melhor do que uma página com prova social encenada.
+
+  <section class="bg-surface">
+    <div class="wrap reveal">
+      <p class="eyebrow">Quem já está a aplicar</p>
+      [INSERIR DEPOIMENTOS REAIS COM AUTORIZAÇÃO]
+    </div>
+  </section>
+-->
+
+<!-- ══ BLOCO 10 — OFERTA ══ -->
+<section class="bg-cream" id="oferta">
+  <div class="wrap-wide reveal">
+    <div class="wrap-head">
+      <p class="eyebrow">Escolha a opção que faz sentido para si</p>
+      <h2>Duas formas de <span class="hl">começar hoje</span></h2>
+    </div>
+
+    <div class="plans">
+      <article class="card plan">
+        <p class="plan__name">Essencial</p>
+        <p class="plan__price">7,90<span>€</span></p>
+        <p class="plan__once">Pagamento único</p>
+        <ul>
+          <li>Método completo em 3 pilares</li>
+          <li>Lista de Compras Inteligente</li>
+          <li>Acesso imediato</li>
+        </ul>
+
+        <!-- Botão próprio do Essencial — link Hotmart DESTE plano (7,90€) -->
+        <a class="cta cta--plan cta--ghost" href="[INSERIR LINK HOTMART ESSENCIAL]">
+          Quero o Essencial
+          <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="card plan plan--reco">
+        <span class="plan__tag">Plano recomendado</span>
+        <p class="plan__name">Completo</p>
+        <p class="plan__price">14,90<span>€</span></p>
+        <p class="plan__once">Pagamento único</p>
+        <p class="plan__k">O que recebe hoje</p>
+        <ul>
+          <li>Método completo em 3 pilares — o diagnóstico explicado, o guia de substituições e o plano de movimento</li>
+          <li>Lista de Compras Inteligente para o supermercado onde já vai</li>
+          <li>Livro de Receitas Mediterrânicas Portuguesas</li>
+          <li>Plano de 21 Dias com ementas prontas</li>
+          <li>Diário de Glicémia e Hábitos para imprimir</li>
+          <li>Acesso imediato após o pagamento</li>
+          <li>Garantia de 15 dias</li>
+        </ul>
+
+        <!-- CTA 4 de 6 -->
+        <a class="cta cta--plan" href="[INSERIR LINK HOTMART COMPLETO]">
+          Quero equilibrar a minha glicémia
+          <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </div>
+
+
+    <p class="offer-meta">Pagamento único. Sem mensalidades. Sem renovação automática.</p>
+
+    <!-- ▸ MÉTODOS DE PAGAMENTO
+         ✔ CONFIRMADO pelo cliente (2026-08-26): os quatro métodos abaixo
+           estão activos no checkout Hotmart deste produto.
+         ▸ Os selos são tipográficos, no sistema visual da página — não são
+           reproduções dos logótipos de marca. Para usar os logótipos oficiais,
+           descarregar os SVG dos kits de imprensa (SIBS/MB WAY, Visa,
+           Mastercard, PayPal) e trocar cada <span class="pay__badge"> por
+           <img src="..." alt="MB WAY" height="18">. Manter os nomes ao lado.
+         ▸ Se algum método for desactivado na Hotmart, apagar a linha aqui. -->
+    <div class="pay">
+      <p class="pay__k">Pode pagar como já está habituado</p>
+      <ul class="pay__list">
+        <li><span class="pay__badge">MB</span>MB WAY</li>
+        <li><span class="pay__badge">MB</span>Multibanco (referência)</li>
+        <li>
+          <span class="pay__badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2.5" y="5" width="19" height="14" rx="2.5"/>
+              <path d="M2.5 10h19"/>
+            </svg>
+          </span>Cartão de crédito ou débito
+        </li>
+        <li><span class="pay__badge">PP</span>PayPal</li>
+      </ul>
+      <p class="pay__note">Pagamento processado pela Hotmart. Não guardamos os dados do seu cartão.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 11 — GARANTIA ══ -->
+<section>
+  <div class="wrap reveal">
+    <div class="card guarantee">
+      <picture>
+        <source srcset="imagens/selo-garantia.webp" type="image/webp">
+        <img class="seal" src="imagens/selo-garantia.png" width="640" height="624"
+             loading="lazy" decoding="async"
+             alt="Selo de garantia de 15 dias.">
+      </picture>
+      <h2>15 dias para <span class="hl">decidir com calma</span></h2>
+      <p>
+        Tem 15 dias para ler tudo, experimentar as trocas e perceber se isto encaixa na sua vida.
+      </p>
+      <p>
+        Se concluir que não é para si, escreve-nos e devolvemos a totalidade do valor pago.
+        Sem perguntas e sem burocracia.
+      </p>
+      <p><strong>O risco é nosso. A decisão é sua.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 12 — FAQ ══ -->
+<section class="bg-cream">
+  <div class="wrap reveal">
+    <p class="eyebrow">Perguntas frequentes</p>
+    <h2>Antes de decidir, <span class="hl">o que costumam perguntar</span></h2>
+
+    <div class="faq">
+      <details open>
+        <summary>Vou ter de deixar de comer pão, arroz ou batata?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Não. O método existe precisamente porque a maioria das pessoas não consegue manter uma alimentação construída sobre proibições. O trabalho é feito na escolha, na troca e na combinação.</p></div>
+      </details>
+
+      <details>
+        <summary>Tenho de pesar a comida ou contar hidratos?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Não. Não há balanças, folhas de cálculo nem contagens.</p></div>
+      </details>
+
+      <!-- AVISO MÉDICO 1 de 2 -->
+      <details>
+        <summary>Posso seguir isto se estou a tomar medicação?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Fale primeiro com o seu médico. Este conteúdo tem fins educativos e informativos e não substitui aconselhamento, diagnóstico ou tratamento médico. Nunca altere nem interrompa medicação por causa daquilo que aqui lê.</p></div>
+      </details>
+
+
+      <details>
+        <summary>Como recebo o acesso?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Imediatamente após a confirmação do pagamento, por email.</p></div>
+      </details>
+
+      <details>
+        <summary>Qual das duas opções devo escolher?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Se quer sobretudo perceber o que fazer, o Essencial chega. Se sabe que a sua dificuldade é a execução do dia-a-dia, escolha o Completo — as ementas e as receitas são exactamente essa parte.</p></div>
+      </details>
+
+    </div>
+
+    <div class="cta-block">
+      <!-- CTA 5 de 6 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Quero começar hoje
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 13 — CTA FINAL ══ -->
+<section class="final">
+  <div class="wrap reveal">
+    <h2>No fim, a escolha <span class="hl">é simples.</span></h2>
+
+    <p class="lead">
+      Pode continuar a cortar alimentos um a um e a esperar pela próxima análise para saber se
+      resultou.
+    </p>
+    <p class="lead">
+      Ou pode aprender, de uma vez, a montar o prato português de forma a que o pão, o arroz e a
+      batata deixem de ser uma preocupação diária.
+    </p>
+
+    <p class="slogan">Não é proibição. É saber escolher, trocar e combinar.</p>
+
+    <div class="cta-block">
+      <!-- CTA 6 de 6 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Quero equilibrar a minha glicémia
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="cta-note">14,90€ · pagamento único · acesso imediato · garantia de 15 dias</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ RODAPÉ ══ -->
+<footer>
+  <div class="wrap">
+
+    <!-- ▸ Substituir os "#" pelos links reais -->
+    <nav aria-label="Ligações legais">
+      <a href="#">Política de Privacidade</a><span class="dot">·</span><a href="#">Termos de Utilização</a><span class="dot">·</span><a href="#">Suporte por email</a>
+    </nav>
+
+    <small>© 2026 Glicémia em Equilíbrio</small>
+  </div>
+</footer>
+
+<!-- ══ CTA STICKY (mobile) ══ -->
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]" tabindex="-1">Quero equilibrar a minha glicémia</a>
+  <small>14,90€ · pagamento único · garantia de 15 dias</small>
+</div>
+
+<script>
+/* JS mínimo. O FAQ usa <details> nativo (acessível, sem JS). */
+document.documentElement.classList.add('js');
+
+/* 1 · Entrada animada em cascata */
+(function () {
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+
+/* 2 · CTA fixo aparece depois do hero */
+(function () {
+  var bar  = document.getElementById('sticky');
+  var hero = document.getElementById('topo');
+  if (!bar || !hero || !('IntersectionObserver' in window)) return;
+  var link = bar.querySelector('a');
+
+  new IntersectionObserver(function (entries) {
+    var on = !entries[0].isIntersecting;
+    bar.classList.toggle('is-visible', on);
+    bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+    link.tabIndex = on ? 0 : -1;
+  }, { rootMargin: '-120px 0px 0px 0px' }).observe(hero);
+})();
+</script>
+
+</body>
+</html>

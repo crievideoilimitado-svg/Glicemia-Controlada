@@ -1,0 +1,49 @@
+IMAGENS DA PAGINA  —  estado actual
+
+O browser carrega sempre o .webp; o .jpg/.png e so o fallback.
+
+BLOCO 4 — prato empilhado vs equilibrado
+  prato-empilhado.jpg        cartao vermelho
+  prato-equilibrado.webp     cartao verde (recorte de metodo.png, sem o pao)
+
+SECCAO "O QUE VAI RECEBER"
+  metodo.webp                O Metodo Escolher, Trocar e Combinar
+  diagnostico.webp           O Diagnostico Descodificado
+  plano-atividade.webp       Plano de Atividade Fisica Simples
+  lista-compras.webp         Lista de Compras Inteligente
+  livro-receitas.webp        Livro de Receitas Mediterranicas Portuguesas
+  plano-21dias.webp          Plano de 21 Dias
+  diario-glicemia.webp        Diario de Glicemia e Habitos (cartao bonus)
+
+BLOCO DA GARANTIA
+  selo-garantia.webp         selo dourado, fundo preto removido
+
+BLOCO DE FECHO
+  pordentro-plano.webp       "Por dentro do Plano Completo"
+
+FICHEIROS-FONTE — NAO SAO SERVIDOS
+  metodo.png, Diagnostico.png, planoAtividade.png, Pordentro-plano.png,
+  Lista-Compra_2K_*.jpeg, Livro-Receita_2K_*.jpeg, Plano-21Dias_2K_*.jpeg,
+  Garantia-15_dias_2K_*.jpeg, Diario_2K_*.jpeg
+  Somados pesam ~16 MB. As versoes servidas pesam ~1 MB no total.
+  Podem ficar fora do upload para o servidor.
+
+POR RESOLVER ANTES DE PUBLICAR
+------------------------------
+1. prato-empilhado.jpg — composicao brasileira (feijao preto, farofa,
+   bife, batata frita). Nao mostra nada do que a lista ao lado promete:
+   sopa de batata, pao a mesa, arroz E batata, e um doce a seguir.
+
+2. plano-21dias — a pagina do produto tem texto trocado, visivel na
+   imagem: "Bacalhau-almoco", "Arroz, arroz", "Batata, batata",
+   "Legumes de", "Portugueso". Convem regerar essa pagina.
+
+3. selo-garantia — o dourado sobre preto e de um registo visual
+   diferente do resto da pagina (creme, verde, coral). Funciona, mas
+   destoa. O selo desenhado anterior pode voltar num minuto.
+
+COMO TROCAR UMA IMAGEM
+----------------------
+Gravar por cima com o mesmo nome e voltar a gerar o .webp. Os
+enquadramentos sao fixos por CSS (object-fit:cover), portanto
+qualquer tamanho encaixa.

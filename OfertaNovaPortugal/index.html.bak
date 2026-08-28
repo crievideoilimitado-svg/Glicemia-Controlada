@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>Glicémia em Equilíbrio — Não obriga a cortar o pão, o arroz e a batata</title>
+<meta name="description" content="Um método de alimentação assente na Dieta Mediterrânica, adaptado ao prato português do dia-a-dia. Escolher, trocar e combinar — para cuidar da glicémia sem comer à parte da família.">
+
+<!-- ══════════════════════════════════════════════════════════════
+     GLICÉMIA EM EQUILÍBRIO — Página de vendas (PT-PT)
+     Ficheiro único, autocontido. Mobile-first. Coluna única. 13 blocos.
+
+     SISTEMA VISUAL: Fraunces (display) + Inter (corpo), tokens oklch,
+     --radius:1rem, cartões 1rem, botões pill, acento coral no CTA.
+
+     ⚠️ ORTOGRAFIA: pré-Acordo, conforme o documento de copy
+        (actividade, reflecte, objecção, exactamente). Excepção: nomes
+        oficiais — "Direção-Geral da Saúde" é como o próprio organismo se escreve.
+        NÃO MISTURAR as duas normas.
+
+     REGRAS DE MONTAGEM:
+       · 5 CTA com o mesmo texto → checkout do plano COMPLETO
+         + 1 botão próprio para o ESSENCIAL no bloco da oferta
+       · Aviso médico em 2 sítios: no FAQ e no rodapé
+         (⚠️ o aviso sob o CTA do hero foi removido a pedido)
+       · Sem contadores, sem "só hoje", sem número de vagas
+       · Bloco 9 (prova social) está COMENTADO e fica fora da página
+         até existirem depoimentos reais com autorização
+       · Nunca descrever o produto como "PDF" ou "área de membros"
+
+     PLACEHOLDERS (procura por "INSERIR"):
+       1. [INSERIR LINK HOTMART COMPLETO]  → 5 CTA + barra sticky
+       2. [INSERIR LINK HOTMART ESSENCIAL] → botão do plano Essencial
+       3. Bloco 9 comentado                → depoimentos reais
+       4. [INSERIR IMAGEM ...]             → 2 espaços sugeridos
+       5. Links legais no rodapé
+
+     PREÇOS: Essencial 7,90€ · Completo 12,90€ · Garantia 15 dias
+     ══════════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════  TOKENS  ═══════════════ */
+:root{
+  --radius:1rem;
+
+  --background:oklch(99.5% .003 100);
+  --surface:oklch(97.5% .006 120);
+  --cream:oklch(97% .012 95);
+  --foreground:oklch(18% .02 160);
+  --muted:oklch(96.5% .006 150);
+  --muted-foreground:oklch(48% .015 180);
+  --card:oklch(100% 0 0);
+
+  --forest:oklch(36% .05 160);
+  --forest-deep:oklch(24% .045 165);
+  --mint:oklch(72% .09 160);
+  --mint-soft:oklch(94% .03 155);
+  --petrol:oklch(45% .06 220);
+  --petrol-soft:oklch(92% .02 220);
+
+  --cta:oklch(68% .19 45);
+  --cta-hover:oklch(62% .2 42);
+
+  --border:oklch(92% .005 150);
+  --ring:oklch(55% .06 160);
+
+  --font-display:"Fraunces", ui-serif, Georgia, serif;
+  --font-sans:"Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --wrap:44rem;
+  --wrap-wide:60rem;
+}
+
+/* ═══════════════  BASE  ═══════════════ */
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--background);
+  color:var(--foreground);
+  font-family:var(--font-sans);
+  font-size:1.125rem;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:600;
+  letter-spacing:-.022em;
+  line-height:1.1;
+  color:var(--forest-deep);
+  margin:0 0 .5em;
+  text-wrap:balance;
+}
+h1{font-size:clamp(2rem,6.2vw,3.15rem); line-height:1.08;}
+h2{font-size:clamp(1.7rem,5vw,2.4rem); line-height:1.14;}
+h3{font-family:var(--font-sans); font-size:1.1rem; font-weight:600; letter-spacing:-.012em; line-height:1.4; margin:0 0 .35rem;}
+
+.hl{font-style:italic; font-weight:500; color:var(--forest);}
+
+p{margin:0 0 1.1em;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:600; color:var(--forest-deep);}
+em{font-style:italic;}
+a{color:var(--forest);}
+img{max-width:100%; height:auto; display:block;}
+
+.wrap{width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:1.25rem;}
+.wrap-wide{width:100%; max-width:var(--wrap-wide); margin-inline:auto; padding-inline:1.25rem;}
+
+section{padding-block:4rem;}
+@media (min-width:640px){ section{padding-block:5rem;} }
+
+.lead{font-size:clamp(1.1rem,3.4vw,1.2rem); line-height:1.72; color:var(--muted-foreground); text-wrap:pretty;}
+.bg-surface{background:var(--surface);}
+.bg-cream{background:var(--cream);}
+
+/* ═══════════════  EYEBROW  ═══════════════ */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--mint-soft);
+  color:var(--forest);
+  border-radius:9999px;
+  padding:.375rem .875rem;
+  font-size:.7rem; font-weight:600;
+  letter-spacing:.13em; text-transform:uppercase;
+  line-height:1.45;
+  margin:0 0 1.35rem;
+  text-align:left;
+}
+.eyebrow::before{content:""; flex:none; width:6px; height:6px; border-radius:9999px; background:var(--mint);}
+
+/* ═══════════════  CARTÕES  ═══════════════ */
+.card{
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius:var(--radius);
+  padding:1.5rem 1.4rem;
+  box-shadow:0 1px 2px #14281e0a, 0 8px 24px -8px #14281e14;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.card:hover{transform:translateY(-2px); box-shadow:0 2px 4px #14281e0f, 0 16px 40px -12px #14281e24;}
+
+/* ═══════════════  BOTÕES  ═══════════════ */
+.cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  width:100%;
+  min-height:60px;
+  padding:1.15rem 1.6rem;
+  background:var(--cta);
+  color:#fff;
+  font-family:var(--font-sans);
+  font-size:clamp(.98rem,3vw,1.1rem);
+  font-weight:600;
+  letter-spacing:-.01em;
+  line-height:1.3;
+  text-align:center;
+  text-decoration:none;
+  border:0;
+  border-radius:9999px;
+  box-shadow:0 1px 0 0 #ffffff40 inset,
+             0 10px 30px -10px color-mix(in oklab, var(--cta) 55%, transparent),
+             0 2px 6px -1px color-mix(in oklab, var(--cta) 30%, transparent);
+  transition:background .3s ease, transform .3s ease, box-shadow .3s ease;
+  text-wrap:balance;
+}
+.cta:hover{background:var(--cta-hover); transform:translateY(-2px);}
+.cta:active{transform:translateY(0);}
+.cta:focus-visible{outline:2px solid var(--forest); outline-offset:3px;}
+.cta .arrow{transition:transform .3s ease; flex:none;}
+.cta:hover .arrow{transform:translateX(4px);}
+@media (min-width:640px){ .cta{width:auto; padding-inline:2.4rem;} }
+
+.cta-block{margin-top:2.25rem; text-align:center;}
+.cta-note{
+  margin:1rem auto 0;
+  max-width:32rem;
+  font-size:.85rem; line-height:1.6;
+  color:var(--muted-foreground);
+  text-align:center;
+}
+
+/* CTA dentro do card de preço */
+.cta--plan{width:100%; margin-top:auto; min-height:56px; padding-inline:1.25rem; font-size:1rem;}
+@media (min-width:640px){ .cta--plan{width:100%; padding-inline:1.25rem;} }
+.cta--ghost{
+  background:transparent; color:var(--forest);
+  border:1.5px solid color-mix(in oklab, var(--forest) 45%, transparent);
+  box-shadow:none;
+}
+.cta--ghost:hover{background:var(--mint-soft); color:var(--forest-deep); border-color:var(--forest); box-shadow:none;}
+
+/* ═══════════════  CHIPS  ═══════════════ */
+.chips{list-style:none; margin:1.5rem 0 0; padding:0; display:flex; flex-wrap:wrap; gap:.5rem;}
+.chips--center{justify-content:center;}
+.chip{
+  display:inline-flex; align-items:center; gap:.4rem;
+  font-size:.8125rem; font-weight:500;
+  color:var(--forest);
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius:9999px;
+  padding:.4rem .85rem;
+  white-space:nowrap;
+  box-shadow:0 1px 2px #14281e0a;
+}
+.chip svg{color:var(--mint); flex:none;}
+.chip--mint{background:var(--mint-soft); border-color:transparent;}
+.chip--mint svg{color:var(--forest);}
+
+/* ═══════════════  B1 · BARRA DE TOPO  ═══════════════ */
+.topbar{
+  background:var(--forest-deep);
+  color:#fff;
+  text-align:center;
+  padding:.7rem 1rem;
+  font-size:.8125rem; font-weight:500; line-height:1.6;
+}
+.topbar .sep{opacity:.4; padding-inline:.5rem;}
+
+/* ═══════════════  B2 · HERO  ═══════════════ */
+.hero{position:relative; overflow:hidden; padding-block:3.25rem 3.75rem;}
+@media (min-width:640px){ .hero{padding-block:4.25rem 4.75rem;} }
+.blob{position:absolute; border-radius:9999px; filter:blur(64px); z-index:0; pointer-events:none;}
+.blob--mint{top:-16rem; left:50%; transform:translateX(-50%); width:min(56rem,140vw); height:32rem; background:color-mix(in oklab, var(--mint-soft) 60%, transparent);}
+.blob--petrol{right:-8rem; top:38%; width:26rem; height:26rem; background:color-mix(in oklab, var(--petrol-soft) 50%, transparent);}
+.hero .wrap{position:relative; z-index:1;}
+.hero .lead{max-width:38rem; margin-bottom:1.9rem;}
+
+/* painel de factos — lista leve, não caixa pesada */
+.facts{list-style:none; margin:0 0 2.25rem; padding:0; display:grid; gap:.6rem; max-width:34rem;}
+.facts li{display:flex; align-items:flex-start; gap:.7rem; font-size:1.02rem; line-height:1.5; color:var(--forest-deep); font-weight:500;}
+.facts .tick{
+  flex:none; margin-top:.15rem;
+  width:22px; height:22px; border-radius:9999px;
+  background:var(--mint-soft); color:var(--forest);
+  display:grid; place-items:center;
+}
+.hero__cta{text-align:center;}
+.hero__cta .cta{max-width:26rem; margin-inline:auto;}
+
+
+
+/* ═══════════════  B4 · MECANISMO DO PROBLEMA  ═══════════════ */
+.pile{
+  margin:2rem 0;
+  border-radius:var(--radius);
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  box-shadow:0 1px 2px #14281e0a, 0 8px 24px -8px #14281e14;
+  overflow:hidden;
+}
+.pile__k{
+  margin:0; padding:.9rem 1.4rem;
+  background:var(--forest-deep); color:#fff;
+  font-size:.7rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+}
+.pile ol{list-style:none; margin:0; padding:.35rem 0;}
+.pile li{
+  display:flex; align-items:center; gap:.9rem;
+  padding:.85rem 1.4rem;
+  font-size:1.05rem; font-weight:500;
+  color:var(--forest-deep);
+  border-bottom:1px solid color-mix(in oklab, var(--border) 55%, transparent);
+}
+.pile li:last-child{border-bottom:0;}
+.pile__n{
+  flex:none; width:1.6rem; height:1.6rem; border-radius:9999px;
+  background:color-mix(in oklab, var(--cta) 14%, transparent);
+  color:var(--cta);
+  display:grid; place-items:center;
+  font-size:.72rem; font-weight:700;
+}
+.pile__foot{
+  margin:0; padding:1rem 1.4rem;
+  background:var(--cream);
+  font-size:.95rem; line-height:1.55;
+  color:var(--muted-foreground);
+  border-top:1px solid color-mix(in oklab, var(--border) 55%, transparent);
+}
+.name-it{
+  margin:2rem 0;
+  padding:1.4rem 1.5rem;
+  border-radius:var(--radius);
+  background:var(--forest-deep);
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,3.8vw,1.4rem);
+  font-weight:500; line-height:1.35; letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.name-it strong{color:var(--mint); font-weight:600;}
+
+/* ═══════════════  B5 · MECANISMO DA SOLUÇÃO  ═══════════════ */
+.steps{display:grid; gap:1rem; margin-top:2rem;}
+@media (min-width:860px){ .steps{grid-template-columns:repeat(3,1fr);} }
+.step{position:relative; padding-top:1.9rem;}
+.step__n{
+  position:absolute; top:-.9rem; left:1.4rem;
+  width:2.4rem; height:2.4rem;
+  display:grid; place-items:center;
+  border-radius:9999px;
+  background:var(--forest); color:#fff;
+  font-family:var(--font-display); font-size:1.05rem; font-weight:600;
+  box-shadow:0 6px 18px -6px color-mix(in oklab, var(--forest) 60%, transparent);
+}
+.step h3{
+  font-family:var(--font-sans);
+  font-size:.82rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:.6rem;
+}
+.step p{margin:0; font-size:1rem; line-height:1.6; color:var(--muted-foreground);}
+
+.slogan{
+  margin:2.25rem 0 0;
+  text-align:center;
+  font-family:var(--font-display);
+  font-size:clamp(1.3rem,4.4vw,1.75rem);
+  font-weight:600; letter-spacing:-.025em; line-height:1.25;
+  color:var(--forest-deep);
+}
+
+/* ═══════════════  B6 · PROVA  ═══════════════ */
+.stat{margin-top:1.75rem;}
+.stat__n{
+  display:block;
+  font-family:var(--font-display);
+  font-size:clamp(2.9rem,10vw,4.25rem);
+  font-weight:600; line-height:.95; letter-spacing:-.04em;
+  color:var(--forest);
+  font-variant-numeric:tabular-nums;
+  margin-bottom:.4rem;
+}
+.stat p{margin:0 0 .5rem; font-size:1.06rem; line-height:1.6;}
+.stat cite{display:block; font-style:normal; font-size:.8rem; line-height:1.5; color:var(--muted-foreground);}
+.stat + .stat{margin-top:2.25rem; padding-top:2.25rem; border-top:1px solid var(--border);}
+.closer{
+  margin-top:2.5rem;
+  padding:1.4rem 1.5rem;
+  border-radius:var(--radius);
+  background:var(--mint-soft);
+  font-size:1.06rem; line-height:1.6;
+  color:var(--forest-deep);
+}
+
+/* ═══════════════  B7 · BENEFÍCIOS  ═══════════════ */
+.benefits{display:grid; gap:1rem; margin-top:2rem;}
+@media (min-width:760px){ .benefits{grid-template-columns:1fr 1fr;} }
+.benefit h3{
+  font-family:var(--font-display);
+  font-size:1.22rem; font-weight:600; letter-spacing:-.02em; line-height:1.25;
+  color:var(--forest-deep);
+  margin-bottom:.5rem;
+}
+.benefit p{margin:0; font-size:1rem; line-height:1.6; color:var(--muted-foreground);}
+
+/* ═══════════════  B8 · PILARES  ═══════════════ */
+.item{display:flex; gap:1rem; align-items:flex-start; margin-bottom:.75rem;}
+.item__n{
+  flex:none; width:2.75rem; height:2.75rem;
+  display:grid; place-items:center;
+  border-radius:9999px;
+  background:var(--mint-soft); color:var(--forest);
+  font-family:var(--font-display); font-size:1.05rem; font-weight:600;
+}
+.item__body{flex:1;}
+.item p{margin:0; font-size:1rem; line-height:1.6; color:var(--muted-foreground);}
+.item__k{
+  display:block;
+  font-size:.68rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:.3rem;
+}
+.tag{
+  display:inline-block; margin-left:.4rem;
+  font-size:.62rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--petrol); background:var(--petrol-soft);
+  border-radius:9999px; padding:.15rem .55rem;
+  vertical-align:middle; white-space:nowrap;
+}
+.sub-h{
+  display:flex; align-items:center; gap:.75rem;
+  font-size:.72rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--forest);
+  margin:2.5rem 0 1.1rem;
+}
+.sub-h::after{content:""; flex:1; height:1px; background:color-mix(in oklab, var(--border) 80%, transparent);}
+.mats{display:grid; gap:.85rem;}
+@media (min-width:700px){ .mats{grid-template-columns:1fr 1fr;} }
+.mat{padding:1.15rem 1.25rem;}
+.mat h3{font-size:1rem; margin-bottom:.3rem;}
+.mat p{margin:0; font-size:.95rem; line-height:1.55; color:var(--muted-foreground);}
+
+/* ═══════════════  B10 · OFERTA  ═══════════════ */
+.plans{display:grid; gap:1.25rem; margin-top:2.25rem;}
+@media (min-width:760px){ .plans{grid-template-columns:1fr 1fr; align-items:start;} }
+.plan{position:relative; padding:1.9rem 1.6rem 1.75rem; display:flex; flex-direction:column;}
+.plan--reco{
+  border-color:transparent;
+  box-shadow:0 0 0 2px var(--forest), 0 1px 2px #14281e0a, 0 16px 40px -12px #14281e2e;
+}
+.plan--reco:hover{box-shadow:0 0 0 2px var(--forest), 0 2px 4px #14281e0f, 0 22px 50px -14px #14281e36;}
+.plan__tag{
+  position:absolute; top:-.8rem; left:1.6rem;
+  background:var(--cta); color:#fff;
+  font-size:.65rem; font-weight:700;
+  letter-spacing:.11em; text-transform:uppercase;
+  border-radius:9999px; padding:.32rem .8rem;
+  box-shadow:0 1px 0 0 #ffffff40 inset, 0 6px 18px -6px color-mix(in oklab, var(--cta) 60%, transparent);
+}
+.plan__name{font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-foreground); margin:0 0 .55rem;}
+.plan__price{
+  font-family:var(--font-display);
+  font-size:3.15rem; font-weight:600; line-height:1; letter-spacing:-.035em;
+  font-variant-numeric:tabular-nums;
+  color:var(--forest-deep);
+  margin:0 0 .25rem;
+}
+.plan--reco .plan__price{color:var(--forest);}
+.plan__price span{font-family:var(--font-sans); font-size:1.2rem; font-weight:500; color:var(--muted-foreground); margin-left:.15rem; letter-spacing:0;}
+.plan__k{
+  margin:0 0 .9rem;
+  padding-top:1.25rem;
+  border-top:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  font-size:.68rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--forest);
+}
+.plan__k + ul{padding-top:0 !important; border-top:0 !important;}
+.plan__once{font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted-foreground); margin:0 0 1.25rem;}
+.plan ul{list-style:none; margin:0 0 1.5rem; padding:1.25rem 0 0; border-top:1px solid color-mix(in oklab, var(--border) 70%, transparent);}
+.plan li{position:relative; padding-left:1.75rem; margin-bottom:.65rem; font-size:1rem; line-height:1.5;}
+.plan li:last-child{margin-bottom:0;}
+.plan li::before{content:""; position:absolute; left:0; top:.42rem; width:1.05rem; height:1.05rem; border-radius:9999px; background:var(--mint-soft);}
+.plan li::after{content:""; position:absolute; left:.28rem; top:.72rem; width:8px; height:4px; border-left:2px solid var(--forest); border-bottom:2px solid var(--forest); transform:rotate(-45deg);}
+
+.offer-meta{text-align:center; margin-top:1.5rem; font-size:.95rem; color:var(--muted-foreground); font-weight:500;}
+
+/* métodos de pagamento */
+.pay{margin:2rem auto 0; max-width:38rem; text-align:center;}
+.pay__k{margin:0 0 .9rem; font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-foreground);}
+.pay__list{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center;}
+.pay__list li{
+  display:inline-flex; align-items:center; gap:.45rem;
+  font-size:.875rem; font-weight:500;
+  color:var(--forest-deep);
+  background:var(--card);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius:9999px;
+  padding:.45rem .9rem .45rem .5rem;
+  box-shadow:0 1px 2px #14281e0a;
+}
+.pay__badge{
+  display:inline-grid; place-items:center;
+  min-width:1.85rem; height:1.35rem; padding-inline:.35rem;
+  border-radius:5px;
+  background:var(--forest); color:#fff;
+  font-size:.6rem; font-weight:700; letter-spacing:.03em;
+}
+
+
+
+/* ═══════════════  B13 · GARANTIA  ═══════════════ */
+.guarantee{text-align:center; padding:clamp(2rem,6vw,3rem) clamp(1.3rem,5vw,2.5rem); background:var(--mint-soft); border:0; box-shadow:none;}
+.guarantee:hover{transform:none; box-shadow:none;}
+.seal{
+  width:92px; height:92px; margin:0 auto 1.4rem;
+  border-radius:9999px;
+  background:var(--card);
+  box-shadow:0 1px 2px #14281e0a, 0 10px 28px -10px #14281e2e;
+  display:grid; place-items:center;
+  font-family:var(--font-display); color:var(--forest); line-height:1.1;
+}
+.seal b{display:block; font-size:1.85rem; font-weight:600; letter-spacing:-.03em;}
+.seal small{display:block; font-family:var(--font-sans); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--muted-foreground);}
+.guarantee p{max-width:34rem; margin-inline:auto; color:var(--forest-deep);}
+
+/* ═══════════════  B14 · FAQ  ═══════════════ */
+.faq{margin-top:1.75rem; display:grid; gap:.75rem;}
+.faq details{
+  overflow:hidden;
+  border-radius:var(--radius);
+  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  background:var(--card);
+  padding-inline:1.25rem;
+  box-shadow:0 1px 2px #14281e0a, 0 8px 24px -8px #14281e14;
+}
+.faq summary{
+  list-style:none; cursor:pointer;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;
+  padding:1.25rem 0;
+  min-height:56px;
+  font-size:1.05rem; font-weight:600; letter-spacing:-.012em; line-height:1.45;
+  color:var(--forest-deep);
+  transition:color .3s ease;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary:hover{color:var(--forest);}
+.faq summary:focus-visible{outline:2px solid var(--ring); outline-offset:2px; border-radius:.5rem;}
+.faq .chev{
+  flex:none; margin-top:.3rem;
+  width:1.75rem; height:1.75rem; border-radius:9999px;
+  background:var(--mint-soft); color:var(--forest);
+  display:grid; place-items:center;
+  transition:transform .3s ease;
+}
+.faq details[open] .chev{transform:rotate(180deg);}
+.faq .answer{padding:0 0 1.35rem; max-width:40rem; font-size:1.02rem; color:var(--muted-foreground); animation:slide .3s ease;}
+@keyframes slide{from{opacity:0; transform:translateY(-6px);} to{opacity:1; transform:none;}}
+
+/* ═══════════════  B15 · CTA FINAL  ═══════════════ */
+.final{position:relative; overflow:hidden; background:var(--forest-deep); color:#fff; text-align:center;}
+.final::before{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--mint) 22%, transparent), transparent 70%),
+    linear-gradient(135deg, color-mix(in oklab, var(--forest-deep) 90%, transparent), color-mix(in oklab, var(--forest) 80%, transparent));
+}
+.final .wrap{position:relative; z-index:1;}
+.final h2{color:#fff;}
+.final .hl{color:var(--mint);}
+.final .lead{color:rgba(255,255,255,.82); margin-inline:auto; max-width:34rem;}
+.final .slogan{color:#fff;}
+.final strong{color:#fff;}
+.final .cta-note{color:rgba(255,255,255,.62);}
+
+/* ═══════════════  RODAPÉ  ═══════════════ */
+footer{
+  background:var(--forest-deep);
+  color:rgba(255,255,255,.62);
+  font-size:.875rem; line-height:1.7;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-block:2.5rem 7.5rem;
+}
+footer nav{margin-bottom:.9rem;}
+footer nav a{color:rgba(255,255,255,.8); text-decoration:none; padding:.35rem .1rem; display:inline-block; transition:color .3s ease;}
+footer nav a:hover{color:#fff; text-decoration:underline;}
+footer .dot{opacity:.35; padding-inline:.5rem;}
+footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255,255,255,.45);}
+@media (min-width:900px){ footer{padding-bottom:3rem;} }
+
+/* ═══════════════  CTA STICKY (mobile)  ═══════════════ */
+.sticky{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  -webkit-backdrop-filter:saturate(160%) blur(18px); backdrop-filter:saturate(160%) blur(18px);
+  background:rgba(255,255,255,.86);
+  border-top:1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom));
+  transform:translateY(115%);
+  transition:transform .35s ease;
+}
+.sticky.is-visible{transform:translateY(0);}
+.sticky .cta{width:100%; min-height:54px; font-size:.98rem; padding-block:.85rem;}
+.sticky small{display:block; text-align:center; margin-top:.45rem; font-size:.75rem; font-weight:500; color:var(--muted-foreground);}
+@media (min-width:900px){ .sticky{display:none;} }
+
+/* ═══════════════  ENTRADA ANIMADA  ═══════════════ */
+.js .reveal{opacity:0; transform:translateY(24px);}
+.js .reveal.in{opacity:1; transform:none; transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);}
+.js .reveal.in > *{animation:rise .6s cubic-bezier(.16,1,.3,1) backwards;}
+.js .reveal.in > *:nth-child(1){animation-delay:.05s;}
+.js .reveal.in > *:nth-child(2){animation-delay:.12s;}
+.js .reveal.in > *:nth-child(3){animation-delay:.19s;}
+.js .reveal.in > *:nth-child(4){animation-delay:.26s;}
+.js .reveal.in > *:nth-child(n+5){animation-delay:.33s;}
+@keyframes rise{from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:none;}}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .js .reveal,.js .reveal.in,.js .reveal.in > *{opacity:1 !important; transform:none !important; animation:none !important;}
+  *{transition-duration:.01ms !important;}
+}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}
+</style>
+</head>
+<body>
+
+<!-- ══ BLOCO 1 — BARRA DE TOPO ══ -->
+<header class="topbar">
+  Acesso imediato<span class="sep">•</span>Pagamento único<span class="sep">•</span>Garantia de 15 dias
+</header>
+
+<main>
+
+<!-- ══ BLOCO 2 — HERO ══ -->
+<section class="hero" id="topo">
+  <div class="blob blob--mint" aria-hidden="true"></div>
+  <div class="blob blob--petrol" aria-hidden="true"></div>
+
+  <div class="wrap reveal">
+    <p class="eyebrow">Para quem recebeu uma análise com a glicémia acima do normal</p>
+
+    <h1>Glicémia alta não obriga a cortar o pão, o arroz e a batata.
+      <span class="hl">Obriga a aprender a escolher, a trocar e a combinar.</span></h1>
+
+    <p class="lead">
+      Um método de alimentação assente na Dieta Mediterrânica, adaptado ao prato português do
+      dia-a-dia — para quem quer cuidar da glicémia sem passar o resto da vida a comer à parte
+      da família.
+    </p>
+
+    <ul class="facts">
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Método completo em 3 pilares</li>
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Feito para a comida que já se cozinha em Portugal</li>
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Pagamento único, sem mensalidades</li>
+      <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 9 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Garantia de 15 dias</li>
+    </ul>
+
+    <div class="hero__cta">
+      <!-- CTA 1 de 5 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Quero equilibrar a minha glicémia
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+
+      <ul class="chips chips--center">
+        <li class="chip"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.7"/><path d="M8 4.4V8l2.4 1.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Acesso imediato</li>
+        <li class="chip"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.4 6.4 12 13 4.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pagamento único</li>
+        <li class="chip chip--mint"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1 2 3.6v4c0 3.5 2.5 6.6 6 7.4 3.5-.8 6-3.9 6-7.4v-4L8 1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Garantia de 15 dias</li>
+        <li class="chip">100% em português de Portugal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 3 — PONTE (logo a seguir ao hero) ══ -->
+<section class="bg-surface">
+  <div class="wrap reveal">
+    <h2>Imagine chegar à próxima análise
+      <span class="hl">sabendo que desta vez fez alguma coisa.</span></h2>
+
+    <p class="lead">
+      Sem dietas de fome. Sem abandonar a comida portuguesa. Sem viver a contar hidratos.
+      Apenas um método simples para saber como comer melhor e cuidar da sua glicémia no dia a dia.
+    </p>
+  </div>
+</section>
+
+<!-- ══ BLOCO 4 — MECANISMO DO PROBLEMA ══ -->
+<section>
+  <div class="wrap reveal">
+    <p class="eyebrow">Porque é que cortar o pão não chega</p>
+    <h2>O problema pode não estar no pão. <span class="hl">Pode estar no prato inteiro.</span></h2>
+
+    <p class="lead">
+      Quase toda a gente parte da mesma ideia: a glicémia sobe por causa do açúcar. Dos doces,
+      dos bolos, dos refrigerantes.
+    </p>
+    <p class="lead">
+      Faz sentido — mas explica pouco. Porque a maioria das pessoas que recebe uma análise
+      alterada não vive a comer doces.
+    </p>
+    <p class="lead">Repare no que costuma estar num almoço português normal:</p>
+
+    <!-- ▸ [INSERIR IMAGEM — O PRATO EMPILHADO]
+         O melhor sítio da página para uma fotografia: um almoço português real,
+         com sopa, pão, arroz e batata visíveis no mesmo enquadramento.
+         alt="Almoço português com sopa de batata, pão, arroz e batata no mesmo prato" -->
+    <div class="pile">
+      <p class="pile__k">Um almoço português normal</p>
+      <ol>
+        <li><span class="pile__n" aria-hidden="true">1</span><span>Sopa de batata</span></li>
+        <li><span class="pile__n" aria-hidden="true">2</span><span>Pão à mesa</span></li>
+        <li><span class="pile__n" aria-hidden="true">3</span><span>Arroz <strong>e</strong> batata no mesmo prato</span></li>
+        <li><span class="pile__n" aria-hidden="true">4</span><span>Fruta ou um doce a seguir</span></li>
+      </ol>
+      <p class="pile__foot">
+        Vistos um a um, são todos alimentos comuns e nenhum é um vilão. Mas na mesma refeição são
+        quatro fontes de hidratos a chegar ao sangue quase ao mesmo tempo, quase sempre sem nada
+        ao lado que abrande essa chegada.
+      </p>
+    </div>
+
+    <p class="name-it">
+      A isto chamamos o <strong>Prato Empilhado</strong>. E é isto, e não um alimento isolado, que
+      faz a diferença entre uma refeição que o seu corpo gere bem e outra que o obriga a um
+      esforço muito maior.
+    </p>
+
+  </div>
+</section>
+
+<!-- ══ BLOCO 5 — MECANISMO DA SOLUÇÃO ══ -->
+<section class="bg-cream">
+  <div class="wrap reveal">
+    <p class="eyebrow">O que muda</p>
+    <h2>Escolher. Trocar. <span class="hl">Combinar.</span></h2>
+
+    <p class="lead">
+      Se o problema é a forma como o prato está montado, a solução não é retirar alimentos.
+      É aprender a montá-lo de outra maneira.
+    </p>
+
+    <div class="steps">
+      <div class="card step">
+        <span class="step__n" aria-hidden="true">1</span>
+        <h3>Escolher</h3>
+        <p>Dentro do que já come, há sempre versões que o seu corpo processa de forma mais lenta. Não é comer outra coisa. É comer a mesma coisa, melhor escolhida.</p>
+      </div>
+      <div class="card step">
+        <span class="step__n" aria-hidden="true">2</span>
+        <h3>Trocar</h3>
+        <p>Algumas trocas são fáceis, baratas e mantêm o prato reconhecível à mesa. Outras não valem a pena. O método diz-lhe quais são quais.</p>
+      </div>
+      <div class="card step">
+        <span class="step__n" aria-hidden="true">3</span>
+        <h3>Combinar</h3>
+        <p>É a parte que quase ninguém explica: o que põe ao lado, e por que ordem come, muda a forma como a refeição chega ao sangue. É aqui que o pão, o arroz e a batata deixam de ser um problema para passarem a ser uma questão de contexto.</p>
+      </div>
+    </div>
+
+    <p class="slogan">Não é proibição. É saber escolher, trocar e combinar.</p>
+
+    <div class="cta-block">
+      <!-- CTA 2 de 5 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Quero equilibrar a minha glicémia
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 6 — PROVA ══ -->
+<section>
+  <div class="wrap reveal">
+    <p class="eyebrow">O contexto português</p>
+    <h2>Não é um problema seu. <span class="hl">É um problema do país.</span></h2>
+
+    <div class="stat">
+      <span class="stat__n">14,2%</span>
+      <p>
+        dos adultos portugueses tinha diabetes em 2024 — <strong>o valor mais alto alguma vez
+        registado em Portugal.</strong>
+      </p>
+      <cite>Observatório Nacional da Diabetes / Sociedade Portuguesa de Diabetologia, “Diabetes: Factos e Números”.</cite>
+    </div>
+
+    <div class="stat">
+      <span class="stat__n">43%</span>
+      <p>
+        das pessoas entre os 20 e os 79 anos vive com diabetes ou com risco elevado de a
+        desenvolver, somando a hiperglicemia intermédia — aquilo a que se chama pré-diabetes.
+      </p>
+      <cite>Observatório Nacional da Diabetes / Sociedade Portuguesa de Diabetologia, “Diabetes: Factos e Números”.</cite>
+    </div>
+
+    <div class="stat">
+      <span class="stat__n">26%</span>
+      <p>
+        é a fatia de portugueses que segue de facto o padrão alimentar mediterrânico, num país
+        mediterrânico. <strong>Depois dos 65 anos, são 19%.</strong>
+      </p>
+      <cite>Direção-Geral da Saúde.</cite>
+    </div>
+
+    <div class="closer">
+      <p>Ou seja: a alimentação que o mundo inteiro copia de nós é aquela que deixámos de fazer.</p>
+      <p><strong>Este método não lhe traz uma dieta estrangeira. Traz de volta a nossa — adaptada a quem precisa de olhar para a glicémia.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 7 — BENEFÍCIOS ══ -->
+<section class="bg-surface">
+  <div class="wrap reveal">
+    <p class="eyebrow">O que muda no seu dia-a-dia</p>
+    <h2>Quatro coisas <span class="hl">que passam a ser diferentes</span></h2>
+
+    <div class="benefits">
+      <div class="card benefit">
+        <h3>Deixa de decidir às escuras</h3>
+        <p>Passa a perceber o que dizem a glicémia em jejum e a hemoglobina glicada, em linguagem simples, sem esperar pela próxima consulta para tirar dúvidas.</p>
+      </div>
+      <div class="card benefit">
+        <h3>Mantém os pratos que já faz</h3>
+        <p>Não vai passar a cozinhar outra coisa. Vai passar a montar de outra maneira aquilo que já cozinha.</p>
+      </div>
+      <div class="card benefit">
+        <h3>Deixa de decidir cada refeição do zero</h3>
+        <p>Ementas, receitas e uma lista de compras organizada para o supermercado onde já vai.</p>
+      </div>
+      <div class="card benefit">
+        <h3>Volta a comer com a família</h3>
+        <p>Sem prato à parte, sem explicações à mesa, sem sentir que está a ser vigiado a cada garfada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 8 — PILARES E MATERIAIS ══ -->
+<section>
+  <div class="wrap reveal">
+    <p class="eyebrow">O que vai encontrar</p>
+    <h2>O método, <span class="hl">em 3 pilares</span></h2>
+
+    <div class="item">
+      <span class="item__n" aria-hidden="true">1</span>
+      <div class="card item__body">
+        <span class="item__k">Pilar 1</span>
+        <h3>O Diagnóstico Descodificado</h3>
+        <p>O que significam a glicémia em jejum e a hemoglobina glicada, e que valores são normais ou alterados. Explicado como alguém explicaria a um familiar.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="item__n" aria-hidden="true">2</span>
+      <div class="card item__body">
+        <span class="item__k">Pilar 2</span>
+        <h3>Guia de Substituições Alimentares Inteligentes</h3>
+        <p>O centro do método. Que trocas compensam, o que pôr ao lado e por que ordem comer — mantendo o pão, o arroz e a batata na mesa.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="item__n" aria-hidden="true">3</span>
+      <div class="card item__body">
+        <span class="item__k">Pilar 3</span>
+        <h3>Plano de Actividade Física Simples</h3>
+        <p>Movimento sem ginásio nem equipamento, incluindo o que fazer nos minutos a seguir às refeições.</p>
+      </div>
+    </div>
+
+    <p class="sub-h">Materiais de apoio</p>
+
+    <!-- ▸ [INSERIR IMAGEM — MATERIAIS]
+         Uma miniatura por material. Fotografia de comida ou capas simples.
+         ⚠️ Não usar mockups de ficheiro nem de tablet: contradizem a decisão de
+         nunca descrever o produto como PDF ou área de membros. -->
+
+    <div class="mats">
+      <div class="card mat">
+        <h3>Lista de Compras Inteligente <span class="tag">nos dois planos</span></h3>
+        <p>Organizada por secções, para Continente, Pingo Doce e Lidl.</p>
+      </div>
+      <div class="card mat">
+        <h3>Livro de Receitas <span class="tag">Completo</span></h3>
+        <p>Bacalhau, sardinha, sopa, leguminosas e azeite. Comida que se reconhece.</p>
+      </div>
+      <div class="card mat">
+        <h3>Plano de 21 Dias <span class="tag">Completo</span></h3>
+        <p>Ementas prontas para as três semanas iniciais.</p>
+      </div>
+      <div class="card mat">
+        <h3>Diário de Glicémia e Hábitos <span class="tag">Completo</span></h3>
+        <p>Para imprimir e levar consigo à consulta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+  ══ BLOCO 9 — PROVA SOCIAL ══ (FORA DA PÁGINA, DE PROPÓSITO)
+
+  Só entra quando existirem depoimentos reais com autorização escrita.
+  Formato: conversa, primeiro nome e inicial do apelido.
+  SEM prints de análises e SEM valores clínicos.
+
+  ⚠️ Não substituir por texto ilustrativo, avatares genéricos ou conversas
+     encenadas. O custo de credibilidade é maior do que o ganho — uma página
+     sem prova social é melhor do que uma página com prova social encenada.
+
+  <section class="bg-surface">
+    <div class="wrap reveal">
+      <p class="eyebrow">Quem já está a aplicar</p>
+      [INSERIR DEPOIMENTOS REAIS COM AUTORIZAÇÃO]
+    </div>
+  </section>
+-->
+
+<!-- ══ BLOCO 10 — OFERTA ══ -->
+<section class="bg-cream" id="oferta">
+  <div class="wrap-wide reveal">
+    <div style="max-width:44rem;margin-inline:auto">
+      <p class="eyebrow">Escolha a opção que faz sentido para si</p>
+      <h2>Duas formas de <span class="hl">começar hoje</span></h2>
+    </div>
+
+    <div class="plans">
+      <article class="card plan">
+        <p class="plan__name">Essencial</p>
+        <p class="plan__price">7,90<span>€</span></p>
+        <p class="plan__once">Pagamento único</p>
+        <ul>
+          <li>Método completo em 3 pilares</li>
+          <li>Lista de Compras Inteligente</li>
+          <li>Acesso imediato</li>
+        </ul>
+
+        <!-- Botão próprio do Essencial — link Hotmart DESTE plano (7,90€) -->
+        <a class="cta cta--plan cta--ghost" href="[INSERIR LINK HOTMART ESSENCIAL]">
+          Quero o Essencial
+          <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="card plan plan--reco">
+        <span class="plan__tag">Plano recomendado</span>
+        <p class="plan__name">Completo</p>
+        <p class="plan__price">12,90<span>€</span></p>
+        <p class="plan__once">Pagamento único</p>
+        <p class="plan__k">O que recebe hoje</p>
+        <ul>
+          <li>Método completo em 3 pilares — o diagnóstico explicado, o guia de substituições e o plano de movimento</li>
+          <li>Lista de Compras Inteligente para o supermercado onde já vai</li>
+          <li>Livro de Receitas Mediterrânicas Portuguesas</li>
+          <li>Plano de 21 Dias com ementas prontas</li>
+          <li>Diário de Glicémia e Hábitos para imprimir</li>
+          <li>Acesso imediato após o pagamento</li>
+          <li>Garantia de 15 dias</li>
+        </ul>
+
+        <!-- CTA 3 de 5 -->
+        <a class="cta cta--plan" href="[INSERIR LINK HOTMART COMPLETO]">
+          Quero equilibrar a minha glicémia
+          <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </div>
+
+
+    <p class="offer-meta">Pagamento único. Sem mensalidades. Sem renovação automática.</p>
+
+    <!-- ▸ MÉTODOS DE PAGAMENTO — confirmar no painel da Hotmart quais estão
+         activos para este produto antes de publicar. Remover os que não estiverem. -->
+    <div class="pay">
+      <p class="pay__k">Pode pagar como já está habituado</p>
+      <ul class="pay__list">
+        <li><span class="pay__badge">MB</span>MB WAY</li>
+        <li><span class="pay__badge">MB</span>Multibanco (referência)</li>
+        <li><span class="pay__badge">💳</span>Cartão de crédito ou débito</li>
+        <li><span class="pay__badge">PP</span>PayPal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ══ BLOCO 11 — GARANTIA ══ -->
+<section>
+  <div class="wrap reveal">
+    <div class="card guarantee">
+      <div class="seal" aria-hidden="true"><div><b>15</b><small>dias</small></div></div>
+      <h2>15 dias para <span class="hl">decidir com calma</span></h2>
+      <p>
+        Tem 15 dias para ler tudo, experimentar as trocas e perceber se isto encaixa na sua vida.
+      </p>
+      <p>
+        Se concluir que não é para si, escreve-nos e devolvemos a totalidade do valor pago.
+        Sem perguntas e sem burocracia.
+      </p>
+      <p><strong>O risco é nosso. A decisão é sua.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 12 — FAQ ══ -->
+<section class="bg-cream">
+  <div class="wrap reveal">
+    <p class="eyebrow">Perguntas frequentes</p>
+    <h2>Antes de decidir, <span class="hl">o que costumam perguntar</span></h2>
+
+    <div class="faq">
+      <details open>
+        <summary>Isto cura a pré-diabetes ou faz baixar a glicémia?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Não. Este é um recurso educativo sobre alimentação e hábitos, não é um tratamento e não substitui o seu médico. O que lhe damos é orientação prática para as decisões que toma todos os dias à mesa. Os resultados dependem de si, do seu caso e do acompanhamento clínico que tiver.</p></div>
+      </details>
+
+      <details>
+        <summary>Vou ter de deixar de comer pão, arroz ou batata?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Não. O método existe precisamente porque a maioria das pessoas não consegue manter uma alimentação construída sobre proibições. O trabalho é feito na escolha, na troca e na combinação.</p></div>
+      </details>
+
+      <details>
+        <summary>Tenho de pesar a comida ou contar hidratos?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Não. Não há balanças, folhas de cálculo nem contagens.</p></div>
+      </details>
+
+      <!-- AVISO MÉDICO 1 de 2 -->
+      <details>
+        <summary>Posso seguir isto se estou a tomar medicação?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Fale primeiro com o seu médico. Este conteúdo tem fins educativos e informativos e não substitui aconselhamento, diagnóstico ou tratamento médico. Nunca altere nem interrompa medicação por causa daquilo que aqui lê.</p></div>
+      </details>
+
+
+      <details>
+        <summary>Como recebo o acesso?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Imediatamente após a confirmação do pagamento, por email.</p></div>
+      </details>
+
+      <details>
+        <summary>Qual das duas opções devo escolher?
+          <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3.5 6 8 10.5 12.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </summary>
+        <div class="answer"><p>Se quer sobretudo perceber o que fazer, o Essencial chega. Se sabe que a sua dificuldade é a execução do dia-a-dia, escolha o Completo — as ementas e as receitas são exactamente essa parte.</p></div>
+      </details>
+
+    </div>
+
+    <div class="cta-block">
+      <!-- CTA 4 de 5 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Quero equilibrar a minha glicémia
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCO 13 — CTA FINAL ══ -->
+<section class="final">
+  <div class="wrap reveal">
+    <h2>No fim, a escolha <span class="hl">é simples.</span></h2>
+
+    <p class="lead">
+      Pode continuar a cortar alimentos um a um e a esperar pela próxima análise para saber se
+      resultou.
+    </p>
+    <p class="lead">
+      Ou pode aprender, de uma vez, a montar o prato português de forma a que o pão, o arroz e a
+      batata deixem de ser uma preocupação diária.
+    </p>
+
+    <p class="slogan">Não é proibição. É saber escolher, trocar e combinar.</p>
+
+    <div class="cta-block">
+      <!-- CTA 5 de 5 -->
+      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+        Quero equilibrar a minha glicémia
+        <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="cta-note">12,90€ · pagamento único · acesso imediato · garantia de 15 dias</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ RODAPÉ ══ -->
+<footer>
+  <div class="wrap">
+
+    <!-- ▸ Substituir os "#" pelos links reais -->
+    <nav aria-label="Ligações legais">
+      <a href="#">Política de Privacidade</a><span class="dot">·</span><a href="#">Termos de Utilização</a><span class="dot">·</span><a href="#">Suporte por email</a>
+    </nav>
+
+    <small>© 2026 Glicémia em Equilíbrio</small>
+  </div>
+</footer>
+
+<!-- ══ CTA STICKY (mobile) ══ -->
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]" tabindex="-1">Quero equilibrar a minha glicémia</a>
+  <small>12,90€ · pagamento único · garantia de 15 dias</small>
+</div>
+
+<script>
+/* JS mínimo. O FAQ usa <details> nativo (acessível, sem JS). */
+document.documentElement.classList.add('js');
+
+/* 1 · Entrada animada em cascata */
+(function () {
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+
+/* 2 · CTA fixo aparece depois do hero */
+(function () {
+  var bar  = document.getElementById('sticky');
+  var hero = document.getElementById('topo');
+  if (!bar || !hero || !('IntersectionObserver' in window)) return;
+  var link = bar.querySelector('a');
+
+  new IntersectionObserver(function (entries) {
+    var on = !entries[0].isIntersecting;
+    bar.classList.toggle('is-visible', on);
+    bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+    link.tabIndex = on ? 0 : -1;
+  }, { rootMargin: '-120px 0px 0px 0px' }).observe(hero);
+})();
+</script>
+
+</body>
+</html>
