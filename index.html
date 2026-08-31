@@ -33,8 +33,10 @@
        · Nunca descrever o produto como "PDF" ou "área de membros"
 
      PLACEHOLDERS (procura por "INSERIR"):
-       1. [INSERIR LINK HOTMART COMPLETO]  → 6 CTA + barra sticky
-       2. [INSERIR LINK HOTMART ESSENCIAL] → botão do plano Essencial
+       1. https://pay.hotmart.com/P107111978M  → SÓ no botão dentro do cartão Completo
+       2. https://pay.hotmart.com/T107403202O → SÓ no botão dentro do cartão Essencial
+          Os outros 6 botões (5 CTA + barra sticky) apontam para #plano-completo:
+          levam ao cartão, onde a pessoa escolhe o plano antes de ir para o checkout.
        3. Bloco 9 comentado                → depoimentos reais
        4. imagens/ → prato-empilhado.jpg e prato-equilibrado.jpg (Bloco 4)
           e pordentro-plano.webp/.jpg (Bloco 8). Ver os avisos em cada bloco:
@@ -506,6 +508,8 @@ section{padding-block:4rem;}
 .plans{display:grid; gap:1.25rem; margin-top:2.25rem;}
 @media (min-width:760px){ .plans{grid-template-columns:1fr 1fr; align-items:start;} }
 .plan{position:relative; padding:1.9rem 1.6rem 1.75rem; display:flex; flex-direction:column;}
+/* alvo da âncora #plano-completo: folga para a etiqueta não encostar ao topo do ecrã */
+.plan[id]{scroll-margin-top:2rem;}
 .plan--reco{
   border-color:transparent;
   box-shadow:0 0 0 2px var(--forest), 0 1px 2px #14281e0a, 0 16px 40px -12px #14281e2e;
@@ -848,7 +852,7 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
 
     <div class="hero__cta">
       <!-- CTA 1 de 6 -->
-      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+      <a class="cta" href="#plano-completo">
         Quero equilibrar a minha glicémia
         <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1020,7 +1024,7 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
 
     <div class="cta-block">
       <!-- CTA 2 de 6 -->
-      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+      <a class="cta" href="#plano-completo">
         Sim, quero comer pão e arroz sem culpa
         <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1283,7 +1287,7 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
 
     <div class="cta-block">
       <!-- CTA 3 de 6 -->
-      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+      <a class="cta" href="#plano-completo">
         Sim, quero saber o que trocar no prato
         <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1348,13 +1352,13 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
         </ul>
 
         <!-- Botão próprio do Essencial — link Hotmart DESTE plano (7,90€) -->
-        <a class="cta cta--plan cta--ghost" href="[INSERIR LINK HOTMART ESSENCIAL]">
+        <a class="cta cta--plan cta--ghost" href="https://pay.hotmart.com/T107403202O">
           Quero o Essencial
           <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </article>
 
-      <article class="card plan plan--reco">
+      <article class="card plan plan--reco" id="plano-completo">
         <span class="plan__tag">Plano recomendado</span>
         <p class="plan__name">Completo</p>
         <p class="plan__price">14,90<span>€</span></p>
@@ -1371,7 +1375,7 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
         </ul>
 
         <!-- CTA 4 de 6 -->
-        <a class="cta cta--plan" href="[INSERIR LINK HOTMART COMPLETO]">
+        <a class="cta cta--plan" href="https://pay.hotmart.com/P107111978M">
           Quero equilibrar a minha glicémia
           <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -1481,7 +1485,7 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
 
     <div class="cta-block">
       <!-- CTA 5 de 6 -->
-      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+      <a class="cta" href="#plano-completo">
         Quero começar hoje
         <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1507,7 +1511,7 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
 
     <div class="cta-block">
       <!-- CTA 6 de 6 -->
-      <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]">
+      <a class="cta" href="#plano-completo">
         Quero equilibrar a minha glicémia
         <svg class="arrow" width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M2 8.5h12M9 3.5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1533,7 +1537,7 @@ src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
 
 <!-- ══ CTA STICKY (mobile) ══ -->
 <div class="sticky" id="sticky" aria-hidden="true">
-  <a class="cta" href="[INSERIR LINK HOTMART COMPLETO]" tabindex="-1">Quero equilibrar a minha glicémia</a>
+  <a class="cta" href="#plano-completo" tabindex="-1">Quero equilibrar a minha glicémia</a>
   <small>14,90€ · pagamento único · garantia de 15 dias</small>
 </div>
 
