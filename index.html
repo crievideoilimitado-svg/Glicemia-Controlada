@@ -791,6 +791,29 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
 }
 .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}
 </style>
+
+<!-- ══ Meta Pixel ══
+     Colocado no fim do <head>, e não no início, de propósito: quando o
+     visitante tem o JavaScript desligado, o <img> do <noscript> obriga o
+     parser a fechar o <head>. Se o bloco estivesse acima, o <style> desta
+     página passaria para dentro do <body>. Aqui isso não acontece. -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '28548877471466849');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=28548877471466849&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -898,7 +921,7 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
           O Prato Empilhado
         </h3>
 
-        <img class="dish__art" src="imagens/prato-empilhado.jpg" width="522" height="383"
+        <img class="dish__art" src="./imagens/prato-empilhado.jpg" width="522" height="383"
              style="object-position:center center"
              loading="lazy" decoding="async"
              alt="Prato com várias fontes de hidratos na mesma refeição.">
@@ -921,8 +944,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
         </h3>
 
         <picture>
-          <source srcset="imagens/prato-equilibrado.webp" type="image/webp">
-          <img class="dish__art" src="imagens/prato-equilibrado.jpg" width="1040" height="780"
+          <source srcset="./imagens/prato-equilibrado.webp" type="image/webp">
+          <img class="dish__art" src="./imagens/prato-equilibrado.jpg" width="1040" height="780"
                loading="lazy" decoding="async"
                alt="Prato com peixe grelhado, brócolos, grelos, cenoura e batata pequena — metade de legumes e uma só fonte de hidratos.">
         </picture>
@@ -1088,7 +1111,7 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
     <!-- ▸ ILUSTRAÇÕES DOS CARTÕES
          SVG planos, no sistema visual da página. Cada um segue o cartão a que
          pertence. Para trocar por fotografia, substituir o <svg class="gift__art">
-         por <img class="gift__art" src="imagens/..." alt="..."> — o CSS aguenta. -->
+         por <img class="gift__art" src="./imagens/..." alt="..."> — o CSS aguenta. -->
 
     <p class="sub-h">O método</p>
 
@@ -1104,8 +1127,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
         </div>
 
         <picture>
-          <source srcset="imagens/metodo.webp" type="image/webp">
-          <img class="gift__art" src="imagens/metodo.jpg" width="1000" height="750"
+          <source srcset="./imagens/metodo.webp" type="image/webp">
+          <img class="gift__art" src="./imagens/metodo.jpg" width="1000" height="750"
                loading="lazy" decoding="async"
                alt="Prato com peixe grelhado, brócolos, grelos, cenoura e batata pequena, com pão, azeite e azeitonas ao lado.">
         </picture>
@@ -1124,8 +1147,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
         </div>
 
         <picture>
-          <source srcset="imagens/diagnostico.webp" type="image/webp">
-          <img class="gift__art" src="imagens/diagnostico.jpg" width="1000" height="750"
+          <source srcset="./imagens/diagnostico.webp" type="image/webp">
+          <img class="gift__art" src="./imagens/diagnostico.jpg" width="1000" height="750"
                loading="lazy" decoding="async"
                alt="Uma folha de análises sobre a mesa, com uma lupa a ampliar uma das linhas de valores.">
         </picture>
@@ -1144,8 +1167,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
         </div>
 
         <picture>
-          <source srcset="imagens/plano-atividade.webp" type="image/webp">
-          <img class="gift__art" src="imagens/plano-atividade.jpg" width="1000" height="750"
+          <source srcset="./imagens/plano-atividade.webp" type="image/webp">
+          <img class="gift__art" src="./imagens/plano-atividade.jpg" width="1000" height="750"
                loading="lazy" decoding="async"
                alt="Uma mulher a caminhar sem pressa numa rua calcetada de uma vila portuguesa.">
         </picture>
@@ -1171,8 +1194,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
           </div>
   
           <picture>
-          <source srcset="imagens/lista-compras.webp" type="image/webp">
-          <img class="gift__art gift__art--pag" src="imagens/lista-compras.jpg" width="800" height="1433"
+          <source srcset="./imagens/lista-compras.webp" type="image/webp">
+          <img class="gift__art gift__art--pag" src="./imagens/lista-compras.jpg" width="800" height="1433"
                loading="lazy" decoding="async"
                alt="Página da Lista de Compras Inteligente, com os produtos organizados por secções: legumes, leguminosas, fruta, peixe e ovos, e mercearia.">
         </picture>
@@ -1195,8 +1218,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
           </div>
   
           <picture>
-          <source srcset="imagens/livro-receitas.webp" type="image/webp">
-          <img class="gift__art gift__art--pag" src="imagens/livro-receitas.jpg" width="800" height="1433"
+          <source srcset="./imagens/livro-receitas.webp" type="image/webp">
+          <img class="gift__art gift__art--pag" src="./imagens/livro-receitas.jpg" width="800" height="1433"
                loading="lazy" decoding="async"
                alt="Página do Livro de Receitas com a receita de bacalhau no forno com legumes e azeite: ingredientes, preparação e outras receitas portuguesas.">
         </picture>
@@ -1219,8 +1242,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
           </div>
   
           <picture>
-          <source srcset="imagens/plano-21dias.webp" type="image/webp">
-          <img class="gift__art gift__art--pag" src="imagens/plano-21dias.jpg" width="800" height="1433"
+          <source srcset="./imagens/plano-21dias.webp" type="image/webp">
+          <img class="gift__art gift__art--pag" src="./imagens/plano-21dias.jpg" width="800" height="1433"
                loading="lazy" decoding="async"
                alt="Página do Plano de 21 Dias, com as refeições das três semanas organizadas dia a dia.">
         </picture>
@@ -1245,8 +1268,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
           <!-- Fotografia do cliente (Diario_2K_*.jpeg). Servida recortada em 3:4:
                o topo do original tinha o titulo sobreposto e ilegivel. -->
           <picture>
-            <source srcset="imagens/diario-glicemia.webp" type="image/webp">
-            <img class="gift__art" src="imagens/diario-glicemia.jpg" width="800" height="1067"
+            <source srcset="./imagens/diario-glicemia.webp" type="image/webp">
+            <img class="gift__art" src="./imagens/diario-glicemia.jpg" width="800" height="1067"
                  loading="lazy" decoding="async"
                  alt="Diário de Glicémia e Hábitos aberto: página com campos para pequeno-almoço, almoço e jantar, glicémia pré e pós-prandial, movimento, sono e observações.">
           </picture>
@@ -1277,8 +1300,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
       </div>
 
       <picture>
-        <source srcset="imagens/pordentro-plano.webp" type="image/webp">
-        <img class="inside__img" src="imagens/pordentro-plano.jpg"
+        <source srcset="./imagens/pordentro-plano.webp" type="image/webp">
+        <img class="inside__img" src="./imagens/pordentro-plano.jpg"
              width="1448" height="1086" loading="lazy" decoding="async"
              alt="O Plano de 21 Dias num tablet, com o progresso e as refeições do dia, e uma receita de bacalhau no forno com legumes num telemóvel.">
       </picture>
@@ -1392,8 +1415,8 @@ footer small{display:block; margin-top:.9rem; font-size:.8125rem; color:rgba(255
   <div class="wrap reveal">
     <div class="card guarantee">
       <picture>
-        <source srcset="imagens/selo-garantia.webp" type="image/webp">
-        <img class="seal" src="imagens/selo-garantia.png" width="640" height="624"
+        <source srcset="./imagens/selo-garantia.webp" type="image/webp">
+        <img class="seal" src="./imagens/selo-garantia.png" width="640" height="624"
              loading="lazy" decoding="async"
              alt="Selo de garantia de 15 dias.">
       </picture>
